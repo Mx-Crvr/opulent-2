@@ -1,0 +1,28 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './dist/*.{html,js}',
+    './dist/pages/*.{html,js}',
+  ],
+  theme: {
+    fontFamily: {
+      'poppins': ['Poppins', 'sans-serif'],
+      'lora': ['Lora', 'serif']
+    },
+    extend: {
+      colors: {
+      red: '#bb0606',
+      pureblack: '#040C17',
+      pureblackhalf: '#040c17de',
+      halfred: '#bb06069c',
+      black_half: '#313139af',
+      redhover: '#ce1e1e',
+      black: '#313139',
+      superblack: '#000000',
+      white: '#F5F5F5',
+      }
+    },
+  },
+  plugins: [],
+}
+

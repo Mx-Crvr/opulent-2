@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#landingpage {
+  height: 100vh;
+  box-shadow: 4000px 4000px inset #000000ad;
+  background-image: url(../src/imgs/black_gulf.JPG);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#h1 {
+  line-height: 1.4;
+  text-shadow: -12px 8px 24px #000;
+}
+
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+input::placeholder {
+  color: #31313959;
+}
+
+input[type=date]:invalid::-webkit-datetime-edit {
+  color: #31313959;
+}
+
+option[value=""] {
+  color: #31313959;
+}
+
+
+
+nav {
+  transition: all 0.8s ease-in-out;
+  background-color: #313139af;
+}
+
+.main-heading {
+  animation: textUp 2s ease-in 1;
+}
+
+@keyframes textUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.ac .ac-trigger {
+  text-align: left;
+  width: 100%;
+  padding: 8px 32px 8px 8px;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  transition: color 0.25s ease;
+  position: relative;
+  text-decoration: none;
+  margin: 0;
+  border: 0;
+}
+.ac .ac-trigger::after {
+  content: "+";
+  text-align: center;
+  width: 15px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  color: #C9003C;
+}
+.ac .ac-panel {
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-timing-function: ease;
+}
+.ac .ac-panel .ac-text {
+  font: 15px/24px "Arial", sans-serif;
+  color: #313139;
+  padding: 8px;
+  margin: 0;
+}
+.ac.js-enabled .ac-panel {
+  visibility: hidden;
+}
+.ac.is-active .ac-panel {
+  visibility: visible;
+}
+.ac.is-active > .ac-header .ac-trigger::after {
+  content: "–";
+  color: #C9003C;
+}
+
+
+button:focus {
+  background-color: #000;
+} 
+
+.button-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.button-container input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}

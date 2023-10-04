@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opulent Air | About</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../scripts/navbar.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+</head>
+<body class="font-poppins font-light">
+  <header>
+    <nav class="z-50 backdrop-blur-sm w-full fixed px-4 md:px-16 lg:px-24 py-6 flex items-center justify-between bg-pureblackhalf text-white">
+      <!-- Desktop nav -->
+      <a href="#" id="brand" class="font-lora text-2xl md:text-3xl lg:text-5xl">Opulent</a>
+      <div class="nav-links items-center justify-between gap-12 hidden lg:flex">
+        <a href="#">About</a>
+        <a href="./services.html">Services</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+      <div class="user-sections flex items-center justify-center gap-8">
+        <a href="../pages/application.html" class="bg-red border border-red px-12 py-2 rounded-lg text-center hover:bg-redhover hover:border-redhover transition-all hidden lg:flex">Apply</a>
+      </div>
+      <!-- Mobile nav -->
+      <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden cursor-pointer" id="navMenu">
+        <path d="M0 0H27.65V5.219H0V0ZM0 9.39H27.65V14.609H0V9.39ZM0 18.781H27.65V24H0V18.781Z" fill="#F8F8F8"/>
+      </svg>
+      <div id="mobileNav" class="hidden fixed font-thin flex flex-col items-stretch gap-4 py-12 px-8 top-0 mobile-nav bg-black text-white text-xl transition-all right-0 w-full">
+        <button id="closeBtn" class="fixed right-4 top-4">X</button>
+        <a href="#" class="mobile-nav-link ">About</a>
+        <a href="./services.html" class="mobile-nav-link ">Services</a>
+        <a href="./contact.html" class="mobile-nav-link ">Contact</a>
+        <a href="../pages/application.html" class="mobile-nav-link mt-2 border border-redhover p-1 w-1/2 text-center rounded-sm">Apply now</a>
+      </div>
+    </nav>
+  </header>
+</head>
+<body>
+  <main id="main">
+    
+  </main>
+</body>
+</html>
