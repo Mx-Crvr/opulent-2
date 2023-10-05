@@ -21,6 +21,7 @@ window.onscroll = () => {
     navBar.classList.remove('py-4')
     navBar.classList.add('py-8')
   }
+
   const reveals = document.querySelectorAll('.reveal');
 
   for (let i = 0; i < reveals.length; i++) {
