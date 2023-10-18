@@ -43,27 +43,20 @@
       <h1 id="h1" class="text-2xl md:text-3xl lg:text-5xl font-thin text-center lg:w-full main-heading">Welcome to OpulentAirCrew, a personalized recruitment and mentorship service provider.</h1>
     </section>
 
-    <section class="px-8 md:px-28 lg:px-32 pt-16 md:pt-20 lg:pt-24 flex flex-col lg:flex-row items-center justify-between sm:gap-5 gap-8 md:gap-10 lg:gap-12 reveal">
-      <a href="./dist/pages/operator.html" class="w-full lg:w-1/2 flex flex-col justify-center gap-2 border border-red rounded-lg shadow-sm p-3 lg:p-5 transition-all duration-500 hover:scale-110 hover:shadow-lg">
+    <section class="px-8 md:px-28 lg:px-32 pt-16 md:pt-20 lg:pt-24 lg:grid grid-cols-2 flex flex-col items-center justify-between sm:gap-5 gap-8 md:gap-10 lg:gap-12 reveal">
+      <div class="w-full flex flex-col justify-center gap-2 border border-red rounded-lg shadow-sm p-3 lg:p-5">
         <h2 class="font-semibold text-2xl lg:text-3xl">Operator wanting to hire?</h2>
         <p class="font-light leading-7 text-md lg:text-lg">Get access to our specialized candidate database. Find the perfect crew for your company.</p>
-        <div class="heading flex items-center gap-2 mt-2 lg:mt-3">
-          <p class="font-medium leading-7 text-md lg:text-lg">Learn more</p>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#313139" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </a>
-      <a href="./dist/pages/candidate.html" class="w-full lg:w-1/2 flex flex-col justify-center gap-2 border border-red rounded-lg shadow-sm p-3 lg:p-5 transition-all duration-500 hover:scale-110 hover:shadow-lg">
+        <a href="./dist/pages/operator.html" class="flex items-center gap-2 mt-2 lg:mt-3 transition-all duration-500 hover:scale-95 hover:text-red font-medium leading-7 text-md lg:text-lg" id="operator">Learn more</a>
+      </div>
+      <div class="w-full flex flex-col justify-center gap-2 border border-red rounded-lg shadow-sm p-3 lg:p-5">
         <h2 class="font-semibold text-2xl lg:text-3xl">Candidate wanting to apply?</h2>
-        <p class="font-light leading-7 text-md lg:text-lg">Fill out an application and take part in our exclusive mentorship programme.</p>
-        <div class="heading flex items-center gap-2 mt-2 lg:mt-3">
-          <p class="font-medium leading-7 text-md lg:text-lg">Learn more</p>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#313139" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <p class="font-light leading-7 text-md lg:text-lg">Fill out an application and get recruited.</p>
+        <div class="flex flex-col items-stretch justify-center mt-2 lg:mt-3 gap-1">
+          <a href="./dist/pages/pilot.html" class="transition-all duration-500 hover:scale-95 hover:text-red font-medium leading-7 text-md lg:text-lg">Pilot</a>
+          <a href="./dist/pages/attendant.html" class="transition-all duration-500 hover:scale-95 hover:text-red font-medium leading-7 text-md lg:text-lg">Attendant</a>
         </div>
-      </a>
+      </div>
     </section>
 
     <section class="px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black flex flex-col items-stretch justify-center gap-8 md:gap-12 lg:gap-16 reveal">
