@@ -5,7 +5,7 @@
 #landingpage {
   height: 100vh;
   box-shadow: 4000px 4000px inset #000000ad;
-  background-image: url(../src/imgs/black_gulf.JPG);
+  background-image: url(../src/imgs/black_gulf.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
