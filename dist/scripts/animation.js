@@ -48,7 +48,6 @@ closeBtn.addEventListener('click', () => {
   main.classList.remove('blur-sm');
 })
 
-const accordion = new Accordion('.accordion-container');
 
 
 
