@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opulent Air Crew</title>
+  <link rel="stylesheet" href="./dist/styles.css">
+  <script src="./dist/scripts/animation.js" defer></script>
+  <script src="./node_modules/accordion-js/dist/accordion.min.js"></script>
+  <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
+  <script src="./dist/scripts/accordion.js" defer></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+</head>
+<body class="font-poppins font-light">
+  <header>
+    <nav id="navbar" class="z-50 backdrop-blur-sm w-full opacity-0 fixed px-4 md:px-16 lg:px-24 py-8 flex items-center justify-between bg-pureblackhalf text-white">
+      <!-- Desktop nav -->
+      <a href="#" id="brand" class="font-lora text-2xl md:text-3xl lg:text-5xl">Opulent</a>
+      <div class="nav-links items-center justify-between gap-12 hidden lg:flex">
+        <a href="./dist/about.html">About</a>
+        <a href="./dist/services.html">Services</a>
+        <a href="./dist/contact.html">Contact</a>
+      </div>
+      <!-- Mobile nav -->
+      <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden cursor-pointer" id="navMenu">
+        <path d="M0 0H27.65V5.219H0V0ZM0 9.39H27.65V14.609H0V9.39ZM0 18.781H27.65V24H0V18.781Z" fill="#F8F8F8"/>
+      </svg>
+      <div id="mobileNav" class="hidden fixed font-thin flex flex-col items-stretch gap-4 py-12 px-8 top-0 mobile-nav bg-black text-white text-xl transition-all right-0 w-full">
+        <button id="closeBtn" class="fixed right-4 top-4 text-3xl">X</button>
+        <a href="./dist/about.html" class="mobile-nav-link ">About</a>
+        <a href="./dist/services.html" class="mobile-nav-link ">Services</a>
+        <a href="./dist/contact.html" class="mobile-nav-link ">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="landingpage" class="px-16 md:px-28 lg:px-32 flex justify-center items-center text-white">
+      <h1 id="h1" class="text-2xl md:text-3xl lg:text-5xl font-thin text-center lg:w-full main-heading">Welcome to OpulentAirCrew, a personalized recruitment and mentorship service provider.</h1>
+    </section>
+
+    <section class="px-8 md:px-28 lg:px-32 pt-16 md:pt-20 lg:pt-24 lg:grid grid-cols-2 flex flex-col items-center justify-between sm:gap-5 gap-8 md:gap-10 lg:gap-12 reveal">
+      <div class="w-full flex flex-col justify-center gap-2 border border-red rounded-lg shadow-sm p-3 lg:p-5">
+        <h2 class="font-semibold text-2xl lg:text-3xl">Operator wanting to hire?</h2>
+        <p class="font-light leading-7 text-md lg:text-lg">Get access to our specialized candidate database. Find the perfect crew for your company.</p>
+        <a href="./dist/operator.html" class="flex items-center gap-2 mt-2 lg:mt-3 transition-all duration-500 hover:scale-95 hover:text-red font-medium leading-7 text-md lg:text-lg underline" id="operator">Learn more</a>
+      </div>
+      <div class="w-full flex flex-col justify-center gap-2 border border-red rounded-lg shadow-sm p-3 lg:p-5">
+        <h2 class="font-semibold text-2xl lg:text-3xl">Candidate wanting to apply?</h2>
+        <p class="font-light leading-7 text-md lg:text-lg">Fill out an application and get recruited.</p>
+        <div class="flex flex-col items-stretch justify-center mt-2 lg:mt-3 gap-1">
+          <a href="./dist/pilot.html" class="transition-all duration-500 hover:scale-95 hover:text-red font-medium leading-7 text-md lg:text-lg underline">Pilot</a>
+          <a href="./dist/attendant.html" class="transition-all duration-500 hover:scale-95 hover:text-red font-medium leading-7 text-md lg:text-lg underline">Attendant</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black flex flex-col items-stretch justify-center gap-8 md:gap-12 lg:gap-16 reveal">
+      <div class="headings flex flex-col gap-2">
+        <h2 class="font-semibold text-[#000] text-2xl lg:text-3xl">Tailored solutions for your aviation Needs</h2>
+        <h3 class="font-medium text-xl lg:text-2xl">Your success, our committment</h3>
+      </div>
+      
+      <div class="flex-container flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12 lg:gap-16 w-full">
+        <div class="text flex flex-col gap-8 md:gap-10 lg:gap-12">
+          <p class="font-light leading-8 w-full">Welcome to OpulentAirCrew, a personalized recruitment and mentorship service provider. Our key focus is to ensure that our staff are a perfect fit for their aviation placements, thereby creating a service that keeps both our client and our crew satisfied and comfortable. <br> <br> We specialize in bridging the gap between high level aviation staffing requirements and candidates pursuing a career within the business aviation and premier airline industry. Ultimately, we provide an exceptional and much needed service to both the aviation key stakeholders and the individual. <br> <br> We take pride in our fast, current, and easy to use online platform that enables seamless candidate registration as well as quick browsing for aviation companies to scan through our fully vetted staffing database. <br> <br> With OpulentAirCrew, you're not just a client or a candidate: you're a partner in our shared aviation journey.</p>
+
+          <a href="./dist/about.html" class="bg-red text-white p-2 rounded-lg text-center hover:bg-redhover transition-all">About us</a>
+        </div>
+
+        <img src="./src/imgs/hero-img.webp" alt="Flight attendant" class="shadow-lg rounded-xl w-full lg:w-1/2">
+      </div>
+    </section>
+
+    <section class="bg-white text-black px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black flex flex-col items-stretch justify-center gap-8 md:gap-12 lg:gap-16">
+      <div class="headings flex justify-between items-center gap-2 reveal">
+        <div class="flex flex-col gap-2">
+          <h2 class="font-semibold text-[#000] text-2xl lg:text-3xl">Our focus points</h2>
+          <!-- <h3 class="font-medium text-xl lg:text-2xl">Setting the bar higher in aviation education</h3> -->
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 reveal">
+        <div class="item text-black rounded-xl p-5 border-2 border-red flex flex-col md:flex-row justify-center items-start md:items-center gap-5 md:gap-8 lg:gap-10 shadow-lg">
+          <svg width="75%" height="75%" viewBox="0 0 75 75" fill="#bb0606" xmlns="http://www.w3.org/2000/svg" class="w-1/6 md:w-full">
+            <path d="M16.4062 5.50371e-08C16.0012 -9.0591e-05 15.603 0.111791 15.2506 0.324732C14.8981 0.537674 14.6035 0.844407 14.3953 1.21502L0.332734 26.2154C0.0831023 26.6602 -0.0306949 27.1769 0.00709716 27.6938C0.0448893 28.2107 0.2324 28.7022 0.543671 29.1004L35.7 74.1011C35.92 74.3825 36.1952 74.6088 36.5062 74.7642C36.8173 74.9195 37.1566 75 37.5 75C37.8434 75 38.1827 74.9195 38.4938 74.7642C38.8048 74.6088 39.08 74.3825 39.3 74.1011L74.4563 29.1004C74.7676 28.7022 74.9551 28.2107 74.9929 27.6938C75.0307 27.1769 74.9169 26.6602 74.6673 26.2154L60.6047 1.21502C60.3965 0.844407 60.1019 0.537674 59.7494 0.324732C59.397 0.111791 58.9988 -9.0591e-05 58.5938 5.50371e-08H16.4062ZM6.48275 25.0004L17.7328 5.00007H27.0094L19.5093 25.0004H6.48275ZM19.4906 30.0005L30.1172 59.1459L7.34994 30.0005H19.4906ZM37.5 65.601L24.5203 30.0005H50.4797L37.5 65.601ZM24.5578 25.0004L32.0578 5.00007H42.9422L50.4422 25.0004H24.5578ZM55.4953 25.0004L47.9953 5.00007H57.2672L68.5173 25.0004H55.4953ZM55.5094 30.0005H67.6501L44.8828 59.1459L55.5094 30.0005Z" fill="#bb0606"/">
+            </svg>
+          <div class="flex flex-col gap-2 justify-center items-stretch">
+            <h4 class="text-xl font-medium">Flight attendants</h4>
+            <p>Our mentorship programme ensures that our candidates are at the prestigious level we stand by, followed by our recruiting and placements which focus on matching our exceptional crew with the perfect aviation operator.</p>
+          </div>           
+        </div>
+
+        <div class="item text-black rounded-xl p-5 border-2 border-red flex flex-col md:flex-row justify-center items-start md:items-center gap-5 md:gap-8 lg:gap-10 shadow-lg">
+          <svg width="75%" height="75%" viewBox="0 0 75 75" fill="#bb0606" xmlns="http://www.w3.org/2000/svg" class="w-1/6 md:w-full">
+            <path d="M75 34.3082C75.0026 30.7604 74.2564 27.2667 72.8276 24.1375C71.3989 21.0084 69.3318 18.3406 66.81 16.3712C64.2882 14.4017 61.3898 13.1916 58.3722 12.8483C55.3546 12.505 52.3113 13.0392 49.5126 14.4033C46.7139 15.7675 44.2464 17.9194 42.3293 20.6679C40.4122 23.4164 39.1049 26.6764 38.5235 30.1584C37.9421 33.6404 38.1046 37.2365 38.9965 40.6273C39.8885 44.0181 41.4823 47.0987 43.6364 49.5953V72.6057C43.6363 73.0136 43.7253 73.4148 43.8949 73.7712C44.0645 74.1276 44.3092 74.4273 44.6057 74.6419C44.9021 74.8566 45.2405 74.979 45.5888 74.9975C45.937 75.0161 46.2836 74.9302 46.5954 74.7479L56.5909 68.8996L66.5864 74.7479C66.8701 74.9135 67.1829 74.9995 67.5 74.9993C67.8797 75 68.2518 74.8755 68.5739 74.6402C68.8705 74.4261 69.1155 74.1268 69.2856 73.7707C69.4556 73.4146 69.5451 73.0136 69.5454 72.6057V49.5953C71.2743 47.5967 72.6468 45.2162 73.5831 42.592C74.5195 39.9677 75.0011 37.152 75 34.3082ZM42.2727 34.3082C42.2727 30.9943 43.1125 27.7549 44.6858 24.9995C46.2591 22.2441 48.4953 20.0966 51.1116 18.8284C53.7279 17.5603 56.6068 17.2285 59.3842 17.875C62.1617 18.5215 64.713 20.1172 66.7154 22.4605C68.7178 24.8037 70.0815 27.7892 70.634 31.0394C71.1864 34.2896 70.9029 37.6585 69.8192 40.7201C68.7355 43.7817 66.9003 46.3985 64.5457 48.2396C62.191 50.0807 59.4228 51.0633 56.5909 51.0633C52.7935 51.0633 49.1516 49.2981 46.4664 46.1559C43.7812 43.0137 42.2727 38.7519 42.2727 34.3082ZM65.4545 68.732L57.5045 64.0805C57.2208 63.9147 56.908 63.8285 56.5909 63.8285C56.2738 63.8285 55.961 63.9147 55.6773 64.0805L47.7273 68.732V53.1737C50.442 54.9243 53.4912 55.8424 56.5909 55.8424C59.6906 55.8424 62.7398 54.9243 65.4545 53.1737V68.732ZM36.8182 59.8399C36.8182 60.4747 36.6027 61.0835 36.2191 61.5324C35.8355 61.9813 35.3152 62.2334 34.7727 62.2334H4.77273C3.50692 62.2334 2.29296 61.645 1.3979 60.5976C0.50284 59.5502 0 58.1296 0 56.6484V5.58505C0 4.1038 0.50284 2.68322 1.3979 1.63582C2.29296 0.588424 3.50692 0 4.77273 0H64.7727C66.0385 0 67.2525 0.588424 68.1475 1.63582C69.0426 2.68322 69.5454 4.1038 69.5454 5.58505C69.5454 6.21987 69.3299 6.82869 68.9464 7.27758C68.5628 7.72647 68.0425 7.97865 67.5 7.97865C66.9575 7.97865 66.4372 7.72647 66.0536 7.27758C65.67 6.82869 65.4545 6.21987 65.4545 5.58505C65.4545 5.37345 65.3827 5.17051 65.2548 5.02088C65.127 4.87125 64.9536 4.78719 64.7727 4.78719H4.77273C4.5919 4.78719 4.41847 4.87125 4.29061 5.02088C4.16274 5.17051 4.09091 5.37345 4.09091 5.58505V56.6484C4.09091 56.86 4.16274 57.0629 4.29061 57.2126C4.41847 57.3622 4.5919 57.4463 4.77273 57.4463H34.7727C35.3152 57.4463 35.8355 57.6984 36.2191 58.1473C36.6027 58.5962 36.8182 59.205 36.8182 59.8399ZM31.3636 37.4996C31.3636 38.1345 31.1481 38.7433 30.7645 39.1922C30.3809 39.6411 29.8607 39.8932 29.3182 39.8932H15.6818C15.1393 39.8932 14.6191 39.6411 14.2355 39.1922C13.8519 38.7433 13.6364 38.1345 13.6364 37.4996C13.6364 36.8648 13.8519 36.256 14.2355 35.8071C14.6191 35.3582 15.1393 35.106 15.6818 35.106H29.3182C29.8607 35.106 30.3809 35.3582 30.7645 35.8071C31.1481 36.256 31.3636 36.8648 31.3636 37.4996ZM31.3636 24.7338C31.3636 25.3686 31.1481 25.9774 30.7645 26.4263C30.3809 26.8752 29.8607 27.1274 29.3182 27.1274H15.6818C15.1393 27.1274 14.6191 26.8752 14.2355 26.4263C13.8519 25.9774 13.6364 25.3686 13.6364 24.7338C13.6364 24.099 13.8519 23.4902 14.2355 23.0413C14.6191 22.5924 15.1393 22.3402 15.6818 22.3402H29.3182C29.8607 22.3402 30.3809 22.5924 30.7645 23.0413C31.1481 23.4902 31.3636 24.099 31.3636 24.7338Z" fill="#bb0606"/>
+            </svg>
+            
+          <div class="flex flex-col gap-2 justify-center items-stretch">
+            <h4 class="text-xl font-medium">Pilots</h4>
+            <p>We understand the difficulties that pilots face when it comes to finding the right placement. Therefore it is our key objective to match you with the perfect full-time, part-time or temporary assignment.</p>
+          </div>          
+          
+        </div>
+
+        <div class="item text-black rounded-xl p-5 border-2 border-red flex flex-col md:flex-row justify-center items-start md:items-center gap-5 md:gap-8 lg:gap-10 shadow-lg">
+          <svg width="75%" height="75%" viewBox="0 0 75 75" fill="#bb0606" xmlns="http://www.w3.org/2000/svg" class="w-1/6 md:w-full">
+            <path d="M29.4118 34.3085C29.4118 33.6737 29.6442 33.0649 30.0579 32.616C30.4715 32.1671 31.0326 31.9149 31.6176 31.9149H43.3824C43.9674 31.9149 44.5285 32.1671 44.9421 32.616C45.3558 33.0649 45.5882 33.6737 45.5882 34.3085C45.5882 34.9433 45.3558 35.5522 44.9421 36.0011C44.5285 36.4499 43.9674 36.7021 43.3824 36.7021H31.6176C31.0326 36.7021 30.4715 36.4499 30.0579 36.0011C29.6442 35.5522 29.4118 34.9433 29.4118 34.3085ZM75 18.3511V69.4149C75 70.8962 74.4577 72.3167 73.4925 73.3642C72.5272 74.4116 71.218 75 69.8529 75H5.14706C3.78197 75 2.4728 74.4116 1.50754 73.3642C0.542278 72.3167 0 70.8962 0 69.4149V18.3511C0 16.8698 0.542278 15.4492 1.50754 14.4018C2.4728 13.3544 3.78197 12.766 5.14706 12.766H20.5882V8.7766C20.5882 6.4489 21.4404 4.21654 22.9572 2.5706C24.4741 0.924674 26.5313 0 28.6765 0H46.3235C48.4687 0 50.5259 0.924674 52.0428 2.5706C53.5596 4.21654 54.4118 6.4489 54.4118 8.7766V12.766H69.8529C71.218 12.766 72.5272 13.3544 73.4925 14.4018C74.4577 15.4492 75 16.8698 75 18.3511ZM25 12.766H50V8.7766C50 7.71855 49.6127 6.70384 48.9232 5.95569C48.2337 5.20754 47.2986 4.78723 46.3235 4.78723H28.6765C27.7014 4.78723 26.7663 5.20754 26.0768 5.95569C25.3873 6.70384 25 7.71855 25 8.7766V12.766ZM4.41176 18.3511V35.4215C14.5413 41.4967 25.9262 44.6826 37.5 44.6809C49.0743 44.6829 60.4595 41.4955 70.5882 35.4176V18.3511C70.5882 18.1395 70.5108 17.9365 70.3729 17.7869C70.235 17.6373 70.048 17.5532 69.8529 17.5532H5.14706C4.95205 17.5532 4.76502 17.6373 4.62713 17.7869C4.48923 17.9365 4.41176 18.1395 4.41176 18.3511ZM70.5882 69.4149V40.8391C60.3414 46.5101 49.0026 49.4671 37.5 49.4681C25.9976 49.4694 14.6585 46.5137 4.41176 40.8431V69.4149C4.41176 69.6265 4.48923 69.8294 4.62713 69.9791C4.76502 70.1287 4.95205 70.2128 5.14706 70.2128H69.8529C70.048 70.2128 70.235 70.1287 70.3729 69.9791C70.5108 69.8294 70.5882 69.6265 70.5882 69.4149Z" fill="#bb0606"/>
+            </svg>
+            
+          <div class="flex flex-col gap-2 justify-center items-stretch">
+            <h4 class="text-xl font-medium">Operators seeking air crew</h4>
+            <p>We are proud of our mentorship programme and the candidates we endorse Operators now have the opportunity to easily browse through our available recruits and make direct contact with us.</p>
+          </div>          
+        </div>
+        
+        <div class="item text-black rounded-xl p-5 border-2 border-red flex flex-col md:flex-row justify-center items-start md:items-center gap-5 md:gap-8 lg:gap-10 shadow-lg">
+          <svg width="75%" height="75%" viewBox="0 0 75 75" fill="#bb0606" xmlns="http://www.w3.org/2000/svg" class="w-1/6 md:w-full">
+            <path d="M37.5 0C30.0832 0 22.833 2.19934 16.6661 6.31989C10.4993 10.4404 5.69282 16.2971 2.85453 23.1494C0.0162477 30.0016 -0.726377 37.5416 0.720569 44.8159C2.16751 52.0902 5.73904 58.772 10.9835 64.0165C16.228 69.261 22.9098 72.8325 30.1841 74.2794C37.4584 75.7264 44.9984 74.9837 51.8506 72.1455C58.7029 69.3072 64.5596 64.5007 68.6801 58.3339C72.8007 52.167 75 44.9168 75 37.5C74.9891 27.5577 71.0347 18.0258 64.0044 10.9956C56.9742 3.96531 47.4423 0.0109185 37.5 0ZM70.365 48H53.0588C54.3138 41.0562 54.3138 33.9437 53.0588 27H70.365C72.545 33.8303 72.545 41.1697 70.365 48ZM37.5 72C37.3037 71.9999 37.1096 71.9588 36.9301 71.8794C36.7505 71.8 36.5896 71.684 36.4575 71.5387C31.3388 66.0262 27.6375 58.8937 25.6538 51H49.3463C47.3625 58.8937 43.6613 66.0262 38.5425 71.5387C38.4104 71.684 38.2495 71.8 38.07 71.8794C37.8904 71.9588 37.6963 71.9999 37.5 72ZM24.9938 48C23.6688 41.0627 23.6688 33.9373 24.9938 27H50.0063C51.3313 33.9373 51.3313 41.0627 50.0063 48H24.9938ZM37.5 3C37.6963 3.00008 37.8904 3.04114 38.07 3.12057C38.2495 3.2 38.4104 3.31603 38.5425 3.46125C43.6613 8.97375 47.3625 16.125 49.3463 24H25.6538C27.6375 16.125 31.3388 8.97375 36.4575 3.46125C36.5896 3.31603 36.7505 3.2 36.9301 3.12057C37.1096 3.04114 37.3037 3.00008 37.5 3ZM69.2475 24H52.4288C50.5875 16.2262 47.1788 9.105 42.4313 3.3525C48.2947 4.21066 53.8397 6.55987 58.5351 10.1751C63.2305 13.7904 66.919 18.5507 69.2475 24ZM32.5688 3.3525C27.8325 9.105 24.4125 16.2262 22.5713 24H5.75252C8.08097 18.5507 11.7695 13.7904 16.4649 10.1751C21.1603 6.55987 26.7053 4.21066 32.5688 3.3525ZM4.63502 27H21.9413C20.6863 33.9437 20.6863 41.0562 21.9413 48H4.63502C2.45506 41.1697 2.45506 33.8303 4.63502 27ZM5.76002 51H22.5713C24.4125 58.7737 27.8213 65.895 32.5688 71.6475C26.7053 70.7893 21.1603 68.4401 16.4649 64.8248C11.7695 61.2096 8.08097 56.4493 5.75252 51H5.76002ZM42.4388 71.6475C47.175 65.895 50.595 58.7737 52.4363 51H69.255C66.9259 56.4503 63.2362 61.2112 58.5394 64.8265C53.8426 68.4419 48.2961 70.7905 42.4313 71.6475H42.4388Z" fill="#bb0606"/>
+            </svg>
+            
+          <div class="flex flex-col gap-2 justify-center items-stretch">
+            <h4 class="text-xl font-medium">Additional services</h4>
+            <p>For our recruits, we can assists with transport arrangement, hotel bookings and visas. For our operators, we can handle VIP jet cabin outfitting and support, with all your personal requirements in mind.</p>
+          </div>          
+        </div>
+      </div>
+    </section>
+
+    <section class="accordion bg-slate-200 text-black px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black text-md flex flex-col justify-center items-stretch gap-8 md:gap-12 lg:gap-16">
+      <h2 class="font-semibold text-2xl md:text-3xl lg:text-4xl">Frequently asked questions</h2>
+      
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-8 md:16 lg:gap-24 reveal">
+        <div class="accordion-container w-full lg:w-1/2 flex flex-col gap-2">
+          <div class="ac rounded-lg font-poppins border border-red p-2">
+            <h2 class="ac-header">
+              <button class="ac-trigger text-black">How can I apply as a candidate?</button>
+            </h2>
+            <div class="ac-panel">
+              <p class="ac-text text-lg">You can easily apply on our website by filling out our application form.</p>
+            </div>
+          </div>
+          
+          <div class="ac rounded-lg font-poppins border border-red p-2">
+            <h2 class="ac-header">
+              <button class="ac-trigger text-black">How do you match candidates with aviation placements?</button>
+            </h2>
+            <div class="ac-panel">
+              <p class="ac-text text-lg">We use a meticulous matching process that considers the unique needs of both our clients and candidates to ensure a perfect fit.</p>
+            </div>
+          </div>
+          <div class="ac rounded-lg font-poppins border border-red p-2">
+            <h2 class="ac-header">
+              <button class="ac-trigger text-black">What makes OpulentAirCrew different from other recruitment agencies?</button>
+            </h2>
+            <div class="ac-panel">
+              <p class="ac-text text-lg">We prioritize personalized service, professionalism, and attention to detail to ensure a seamless experience for both clients and candidates.</p>
+            </div>
+          </div>
+          <div class="ac rounded-lg font-poppins border border-red p-2">
+            <h2 class="ac-header">
+              <button class="ac-trigger text-black">Is OpulentAirCrew only for experienced crew, or can aspiring candidates join as well?</button>
+            </h2>
+            <div class="ac-panel">
+              <p class="ac-text text-lg">Candidate from all levels of experience are welcome to apply</p>
+            </div>
+          </div>
+        </div>
+        <img src="./src/imgs/attendant-tray.webp" alt="consult" class="w-full lg:w-1/2 rounded-lg shadow-lg">
+      </div>
+    </section>
+
+    <section class="bg-white text-white px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black text-md flex flex-col justify-center items-stretch gap-8 md:gap-12 lg:gap-16 reveal">
+      <div class="flex items-center py-8 md:py-10 lg:py-12 justify-center flex-col bg-pureblack rounded-lg shadow-lg gap-1 lg:gap-2">
+        <h4 class="text-lg lg:text-2xl">Any more questions?</h4>
+        <h5 class="text-md lg:text-lg">Reach out to our friendly team</h5>
+        <a href="./dist/contact.html" class="w-3/4 lg:w-2/6 mt-4 lg:mt-6 mx-auto bg-red text-white p-2 rounded-lg text-center hover:bg-redhover transition-all">Contact</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="px-8 md:px-28 lg:px-32 pt-16 md:pt-20 lg:pt-24 bg-pureblack reveal flex flex-col gap-12">
+    <div class="flex flex-col justify-center items-center gap-5">
+      <div class="flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17.5H12.01M8.2 22H15.8C16.9201 22 17.4802 22 17.908 21.782C18.2843 21.5903 18.5903 21.2843 18.782 20.908C19 20.4802 19 19.9201 19 18.8V5.2C19 4.07989 19 3.51984 18.782 3.09202C18.5903 2.71569 18.2843 2.40973 17.908 2.21799C17.4802 2 16.9201 2 15.8 2H8.2C7.0799 2 6.51984 2 6.09202 2.21799C5.71569 2.40973 5.40973 2.71569 5.21799 3.09202C5 3.51984 5 4.0799 5 5.2V18.8C5 19.9201 5 20.4802 5.21799 20.908C5.40973 21.2843 5.71569 21.5903 6.09202 21.782C6.51984 22 7.07989 22 8.2 22ZM12.5 17.5C12.5 17.7761 12.2761 18 12 18C11.7239 18 11.5 17.7761 11.5 17.5C11.5 17.2239 11.7239 17 12 17C12.2761 17 12.5 17.2239 12.5 17.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="text-white text-xl">031 234 5678</p>  
+      </div>
+      <div class="socials flex items-center justify-center gap-8">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
+          <g clip-path="url(#clip0_1459_241921)">
+          <path d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z" fill="white"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_1459_241921">
+          <rect width="24" height="24" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
+          <g clip-path="url(#clip0_1459_241909)">
+          <path d="M12 2.16094C15.2063 2.16094 15.5859 2.175 16.8469 2.23125C18.0188 2.28281 18.6516 2.47969 19.0734 2.64375C19.6313 2.85938 20.0344 3.12188 20.4516 3.53906C20.8734 3.96094 21.1313 4.35938 21.3469 4.91719C21.5109 5.33906 21.7078 5.97656 21.7594 7.14375C21.8156 8.40937 21.8297 8.78906 21.8297 11.9906C21.8297 15.1969 21.8156 15.5766 21.7594 16.8375C21.7078 18.0094 21.5109 18.6422 21.3469 19.0641C21.1313 19.6219 20.8688 20.025 20.4516 20.4422C20.0297 20.8641 19.6313 21.1219 19.0734 21.3375C18.6516 21.5016 18.0141 21.6984 16.8469 21.75C15.5813 21.8063 15.2016 21.8203 12 21.8203C8.79375 21.8203 8.41406 21.8063 7.15313 21.75C5.98125 21.6984 5.34844 21.5016 4.92656 21.3375C4.36875 21.1219 3.96563 20.8594 3.54844 20.4422C3.12656 20.0203 2.86875 19.6219 2.65313 19.0641C2.48906 18.6422 2.29219 18.0047 2.24063 16.8375C2.18438 15.5719 2.17031 15.1922 2.17031 11.9906C2.17031 8.78438 2.18438 8.40469 2.24063 7.14375C2.29219 5.97187 2.48906 5.33906 2.65313 4.91719C2.86875 4.35938 3.13125 3.95625 3.54844 3.53906C3.97031 3.11719 4.36875 2.85938 4.92656 2.64375C5.34844 2.47969 5.98594 2.28281 7.15313 2.23125C8.41406 2.175 8.79375 2.16094 12 2.16094ZM12 0C8.74219 0 8.33438 0.0140625 7.05469 0.0703125C5.77969 0.126563 4.90313 0.332812 4.14375 0.628125C3.35156 0.9375 2.68125 1.34531 2.01563 2.01562C1.34531 2.68125 0.9375 3.35156 0.628125 4.13906C0.332812 4.90313 0.126563 5.775 0.0703125 7.05C0.0140625 8.33437 0 8.74219 0 12C0 15.2578 0.0140625 15.6656 0.0703125 16.9453C0.126563 18.2203 0.332812 19.0969 0.628125 19.8563C0.9375 20.6484 1.34531 21.3188 2.01563 21.9844C2.68125 22.65 3.35156 23.0625 4.13906 23.3672C4.90313 23.6625 5.775 23.8687 7.05 23.925C8.32969 23.9812 8.7375 23.9953 11.9953 23.9953C15.2531 23.9953 15.6609 23.9812 16.9406 23.925C18.2156 23.8687 19.0922 23.6625 19.8516 23.3672C20.6391 23.0625 21.3094 22.65 21.975 21.9844C22.6406 21.3188 23.0531 20.6484 23.3578 19.8609C23.6531 19.0969 23.8594 18.225 23.9156 16.95C23.9719 15.6703 23.9859 15.2625 23.9859 12.0047C23.9859 8.74688 23.9719 8.33906 23.9156 7.05938C23.8594 5.78438 23.6531 4.90781 23.3578 4.14844C23.0625 3.35156 22.6547 2.68125 21.9844 2.01562C21.3188 1.35 20.6484 0.9375 19.8609 0.632812C19.0969 0.3375 18.225 0.13125 16.95 0.075C15.6656 0.0140625 15.2578 0 12 0Z" fill="white"/>
+          <path d="M12 5.83594C8.59688 5.83594 5.83594 8.59688 5.83594 12C5.83594 15.4031 8.59688 18.1641 12 18.1641C15.4031 18.1641 18.1641 15.4031 18.1641 12C18.1641 8.59688 15.4031 5.83594 12 5.83594ZM12 15.9984C9.79219 15.9984 8.00156 14.2078 8.00156 12C8.00156 9.79219 9.79219 8.00156 12 8.00156C14.2078 8.00156 15.9984 9.79219 15.9984 12C15.9984 14.2078 14.2078 15.9984 12 15.9984Z" fill="white"/>
+          <path d="M19.8469 5.59214C19.8469 6.38902 19.2 7.0312 18.4078 7.0312C17.6109 7.0312 16.9688 6.38433 16.9688 5.59214C16.9688 4.79526 17.6156 4.15308 18.4078 4.15308C19.2 4.15308 19.8469 4.79995 19.8469 5.59214Z" fill="white"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_1459_241909">
+          <rect width="24" height="24" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
+          <g clip-path="url(#clip0_1459_241918)">
+          <path d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5563 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2938 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516V20.4516Z" fill="white"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_1459_241918">
+          <rect width="24" height="24" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="credits flex flex-col items-center justify-center gap-2 text-white pb-2 md:pb-6 lg:pb-8 font-thin">
+      <p>&copy; 2023 OpulentAirCrew. All rights reserved</p>
+      <p>Developed and maintained by Max Evans</p>
+    </div>
+  </footer>
+</body>
+</html>
