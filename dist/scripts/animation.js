@@ -5,10 +5,10 @@ const navMenu = document.getElementById('navMenu');
 const main = document.getElementById('main')
 const navBar = document.getElementById('navbar');
 
-setTimeout(() => {
-  navBar.classList.remove('opacity-0')
-  navBar.classList.add('opacity-100')
-}, 3000);
+// setTimeout(() => {
+//   navBar.classList.remove('opacity-0')
+//   navBar.classList.add('opacity-100')
+// }, 3000);
 
 window.onscroll = () => {
   const navBar = document.getElementById('navbar');
