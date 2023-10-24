@@ -6,6 +6,7 @@
   <title>Opulent Air Crew</title>
   <link rel="stylesheet" href="./dist/styles.css">
   <script src="./dist/scripts/animation.js" defer></script>
+  <!-- <script src="./dist/scripts/navbar.js" defer></script> -->
   <script src="./node_modules/accordion-js/dist/accordion.min.js"></script>
   <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
   <script src="./dist/scripts/accordion.js" defer></script>
@@ -20,9 +21,8 @@
       <!-- Desktop nav -->
       <a href="#" id="brand" class="font-lora text-2xl md:text-3xl lg:text-5xl">Opulent</a>
       <div class="nav-links items-center justify-between gap-12 hidden lg:flex">
-        <a href="./dist/about.html">About</a>
-        <a href="./dist/services.html">Services</a>
-        <a href="./dist/contact.html">Contact</a>
+        <a href="./services.html">Services</a>
+        <a href="./contact.html">Contact</a>
       </div>
       <!-- Mobile nav -->
       <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden cursor-pointer" id="navMenu">
@@ -30,9 +30,8 @@
       </svg>
       <div id="mobileNav" class="hidden fixed font-thin flex flex-col items-stretch gap-4 py-12 px-8 top-0 mobile-nav bg-black text-white text-xl transition-all right-0 w-full">
         <button id="closeBtn" class="fixed right-4 top-4 text-3xl">X</button>
-        <a href="./dist/about.html" class="mobile-nav-link ">About</a>
-        <a href="./dist/services.html" class="mobile-nav-link ">Services</a>
-        <a href="./dist/contact.html" class="mobile-nav-link ">Contact</a>
+        <a href="./services.html" class="mobile-nav-link ">Services</a>
+        <a href="./contact.html" class="mobile-nav-link ">Contact</a>
       </div>
     </nav>
   </header>
@@ -42,7 +41,7 @@
       <h1 id="h1" class="text-2xl md:text-3xl lg:text-5xl font-thin text-center lg:w-full main-heading">Welcome to OpulentAirCrew, a personalized recruitment and mentorship service provider.</h1>
     </section>
 
-    <section class="px-8 md:px-28 lg:px-32 pt-16 md:pt-20 lg:pt-24 lg:grid grid-cols-2 flex flex-col items-center justify-between sm:gap-5 gap-8 md:gap-10 lg:gap-12 reveal">
+    <section class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24 lg:grid grid-cols-2 flex flex-col items-center justify-between sm:gap-5 gap-8 md:gap-10 lg:gap-12 reveal">
       <div class="w-full flex flex-col justify-center gap-2 border border-red rounded-lg shadow-sm p-3 lg:p-5">
         <h2 class="font-semibold text-2xl lg:text-3xl">Operator wanting to hire?</h2>
         <p class="font-light leading-7 text-md lg:text-lg">Get access to our specialized candidate database. Find the perfect crew for your company.</p>
@@ -58,7 +57,7 @@
       </div>
     </section>
 
-    <section class="px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black flex flex-col items-stretch justify-center gap-8 md:gap-12 lg:gap-16 reveal">
+    <section class="px-4 md:px-16 lg:px-24 py-16 md:py-20 lg:py-24 text-black flex flex-col items-stretch justify-center gap-8 md:gap-12 lg:gap-16 reveal">
       <div class="headings flex flex-col gap-2">
         <h2 class="font-semibold text-[#000] text-2xl lg:text-3xl">Tailored solutions for your aviation Needs</h2>
         <h3 class="font-medium text-xl lg:text-2xl">Your success, our committment</h3>
@@ -75,7 +74,7 @@
       </div>
     </section>
 
-    <section class="bg-white text-black px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black flex flex-col items-stretch justify-center gap-8 md:gap-12 lg:gap-16">
+    <section class="bg-white text-black px-4 md:px-16 lg:px-24 py-16 md:py-20 lg:py-24 text-black flex flex-col items-stretch justify-center gap-8 md:gap-12 lg:gap-16">
       <div class="headings flex justify-between items-center gap-2 reveal">
         <div class="flex flex-col gap-2">
           <h2 class="font-semibold text-[#000] text-2xl lg:text-3xl">Our focus points</h2>
@@ -130,7 +129,7 @@
       </div>
     </section>
 
-    <section class="accordion bg-slate-200 text-black px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black text-md flex flex-col justify-center items-stretch gap-8 md:gap-12 lg:gap-16">
+    <section class="accordion bg-slate-200 text-black px-4 md:px-16 lg:px-24 py-16 md:py-20 lg:py-24 text-black text-md flex flex-col justify-center items-stretch gap-8 md:gap-12 lg:gap-16">
       <h2 class="font-semibold text-2xl md:text-3xl lg:text-4xl">Frequently asked questions</h2>
       
       <div class="flex flex-col lg:flex-row justify-between items-center gap-8 md:16 lg:gap-24 reveal">
@@ -173,7 +172,7 @@
       </div>
     </section>
 
-    <section class="bg-white text-white px-8 md:px-28 lg:px-32 py-16 md:py-20 lg:py-24 text-black text-md flex flex-col justify-center items-stretch gap-8 md:gap-12 lg:gap-16 reveal">
+    <section class="bg-white text-white px-4 md:px-16 lg:px-24 py-16 md:py-20 lg:py-24 text-black text-md flex flex-col justify-center items-stretch gap-8 md:gap-12 lg:gap-16 reveal">
       <div class="flex items-center py-8 md:py-10 lg:py-12 justify-center flex-col bg-pureblack rounded-lg shadow-lg gap-1 lg:gap-2">
         <h4 class="text-lg lg:text-2xl">Any more questions?</h4>
         <h5 class="text-md lg:text-lg">Reach out to our friendly team</h5>
@@ -182,14 +181,9 @@
     </section>
   </main>
 
-  <footer class="px-8 md:px-28 lg:px-32 pt-16 md:pt-20 lg:pt-24 bg-pureblack reveal flex flex-col gap-12">
+  <footer class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24 bg-pureblack reveal flex flex-col gap-12">
     <div class="flex flex-col justify-center items-center gap-5">
-      <div class="flex items-center gap-2">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.5H12.01M8.2 22H15.8C16.9201 22 17.4802 22 17.908 21.782C18.2843 21.5903 18.5903 21.2843 18.782 20.908C19 20.4802 19 19.9201 19 18.8V5.2C19 4.07989 19 3.51984 18.782 3.09202C18.5903 2.71569 18.2843 2.40973 17.908 2.21799C17.4802 2 16.9201 2 15.8 2H8.2C7.0799 2 6.51984 2 6.09202 2.21799C5.71569 2.40973 5.40973 2.71569 5.21799 3.09202C5 3.51984 5 4.0799 5 5.2V18.8C5 19.9201 5 20.4802 5.21799 20.908C5.40973 21.2843 5.71569 21.5903 6.09202 21.782C6.51984 22 7.07989 22 8.2 22ZM12.5 17.5C12.5 17.7761 12.2761 18 12 18C11.7239 18 11.5 17.7761 11.5 17.5C11.5 17.2239 11.7239 17 12 17C12.2761 17 12.5 17.2239 12.5 17.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p class="text-white text-xl">031 234 5678</p>  
-      </div>
+      
       <div class="socials flex items-center justify-center gap-8">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
           <g clip-path="url(#clip0_1459_241921)">
@@ -227,7 +221,7 @@
     </div>
     <div class="credits flex flex-col items-center justify-center gap-2 text-white pb-2 md:pb-6 lg:pb-8 font-thin">
       <p>&copy; 2023 OpulentAirCrew. All rights reserved</p>
-      <p>Developed and maintained by Max Evans</p>
+      <p class=" text-xs">Developed and maintained by <span class="italic">CarverCode</span></p>
     </div>
   </footer>
 </body>
