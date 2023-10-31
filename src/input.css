@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#navbar {
+  box-shadow: 0.1px 0.75px 8px #00000094;
+}
+
 #landingpage {
   height: 100vh;
   box-shadow: 4000px 4000px inset #000000ad;
