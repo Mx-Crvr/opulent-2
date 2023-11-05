@@ -657,10 +657,6 @@ video {
   width: 16.666667%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
 .w-3\/4 {
   width: 75%;
 }
@@ -669,24 +665,12 @@ video {
   width: 1rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
-.w-6\/12 {
-  width: 50%;
-}
-
-.w-3\/12 {
-  width: 25%;
-}
-
 .w-4\/12 {
   width: 33.333333%;
 }
 
-.basis-full {
-  flex-basis: 100%;
+.w-full {
+  width: 100%;
 }
 
 @keyframes bounce {
@@ -873,10 +857,6 @@ video {
 
 .p-5 {
   padding: 1.25rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-16 {
@@ -1422,6 +1402,14 @@ button:focus {
     width: 50%;
   }
 
+  .lg\:w-2\/12 {
+    width: 16.666667%;
+  }
+
+  .lg\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .lg\:w-2\/5 {
     width: 40%;
   }
@@ -1436,14 +1424,6 @@ button:focus {
 
   .lg\:w-full {
     width: 100%;
-  }
-
-  .lg\:w-2\/12 {
-    width: 16.666667%;
-  }
-
-  .lg\:w-2\/3 {
-    width: 66.666667%;
   }
 
   .lg\:grid-cols-2 {
