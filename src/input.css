@@ -6,6 +6,15 @@
   box-shadow: 0.1px 0.75px 8px #00000094;
 }
 
+.unanswered {
+  border: 1px solid red;
+}
+
+.columnTwo {
+  min-width: 50%;
+  /* max-width: 12em; */
+}
+
 #landingpage {
   height: 100vh;
   box-shadow: 4000px 4000px inset #000000ad;

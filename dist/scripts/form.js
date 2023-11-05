@@ -20,3 +20,11 @@ dropdown.addEventListener('input', () => {
     licenseType.classList.remove('hidden')
   }
 })
+
+// Pilot Form Submit Handler
+const pilotForm = document.getElementById('pilotForm');
+
+
+
+// Attendant Form Submit Handler
+const attendantForm = document.getElementById('attendantForm');

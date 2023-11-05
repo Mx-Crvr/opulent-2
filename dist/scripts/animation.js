@@ -15,10 +15,12 @@ window.onscroll = () => {
   let scrollPos = window.scrollY;
 
   if (scrollPos > 250) {
-    navBar.classList.remove('py-8')
+    navBar.classList.remove('py-8');
+    navBar.classList.remove('bg-white');
     navBar.classList.add('py-4')
   } else {
     navBar.classList.remove('py-4')
+    navBar.classList.add('bg-whiteBg')
     navBar.classList.add('py-8')
   }
 

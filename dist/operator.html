@@ -6,23 +6,28 @@
   <title>Operator</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./scripts/navbar.js" defer></script>
+  <script src="./scripts/candidiates.js" defer></script>
 </head>
 <body class="font-poppins font-light">
   <header>
-    <nav id="navbar" class="z-50 backdrop-blur-sm w-full opacity-1 fixed px-4 md:px-16 lg:px-24 py-8 flex items-center justify-between bg-whiteBg text-black">
+    <nav id="navbar" class="z-50 backdrop-blur-sm w-full opacity-1 fixed px-4 md:px-16 lg:px-24 py-8 flex items-center justify-between bg-white text-black">
       <!-- Desktop nav -->
-      <a href="../index.html" id="brand" class="font-lora text-2xl md:text-3xl lg:text-5xl"><img src="../src/imgs/opulent-logo.webp" alt="logo" class="w-2/12"></a>
+      <a href="../index.html" id="brand" class="w-4/12 lg:w-2/12 font-lora text-2xl md:text-3xl lg:text-5xl w-2/12"><img src="../src/imgs/logo.webp" alt="logo" class="w-full"></a>
       <div class="nav-links items-center justify-between gap-12 hidden lg:flex">
-        <a href="../index.html">Home</a>
-        <a href="./contact.html">Contact</a>
+        <a href="#" class="text-gray font-semibold underline">Candidate Database</a>
+        <a href="./pilot.html" class="text-black font-semibold hover:text-redhover transition-color duration-200">Pilots</a>
+        <a href="./attendant.html" class="text-black font-semibold hover:text-redhover transition-color duration-200">Attendants</a>
       </div>
+      <a href="./contact.html" class="hidden lg:block text-black font-semibold hover:text-redhover transition-color duration-200">Contact</a>
       <!-- Mobile nav -->
       <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden cursor-pointer" id="navMenu">
-        <path d="M0 0H27.65V5.219H0V0ZM0 9.39H27.65V14.609H0V9.39ZM0 18.781H27.65V24H0V18.781Z" fill="#F8F8F8"/>
+        <path d="M0 0H27.65V5.219H0V0ZM0 9.39H27.65V14.609H0V9.39ZM0 18.781H27.65V24H0V18.781Z" fill="#000"/>
       </svg>
       <div id="mobileNav" class="hidden fixed font-thin flex flex-col items-stretch gap-4 py-12 px-8 top-0 mobile-nav bg-black text-white text-xl transition-all right-0 w-full">
         <button id="closeBtn" class="fixed right-4 top-4 text-3xl">X</button>
-        <a href="./services.html" class="mobile-nav-link ">Services</a>
+        <a href="./operator.html" class="mobile-nav-link ">Candidate Database</a>
+        <a href="./attendant.html" class="mobile-nav-link ">Attendants</a>
+        <a href="./pilot.html" class="mobile-nav-link ">Pilots</a>
         <a href="./contact.html" class="mobile-nav-link ">Contact</a>
       </div>
     </nav>
@@ -30,7 +35,15 @@
 
   <main id="main">
     <div id="hero_section" class="px-4 md:px-16 lg:px-24 pt-36">
+    </div>
 
+    <div id="container" class="px-4 md:px-16 lg:px-24 py-8 flex flex-col ">
+      <input type="text" id="search" class="border border-red rounded-md shadow-sm text-lg p-2 mb-4 outline-none focus:border-redhover">      
+      <p>Showing <span id="results" class="text-redhover"></span> results</p>
+      <div id="candidatesContainer" class="flex flex-col items-stretch justify-center gap-4">
+
+      </div>
+    </div>
   <footer class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24 bg-pureblack reveal flex flex-col gap-12">
     <div class="flex flex-col justify-center items-center gap-5">
       
