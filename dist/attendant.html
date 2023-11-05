@@ -64,7 +64,7 @@
       <h2 class="font-semibold text-xl lg:text-2xl mb-5 lg:mb-10 text-center lg:text-start">Join our mentorship programme</h2>
       <div class="form flex flex-col items-stretch justify-center bg-slate-200 border border-slate-300 shadow-lg rounded-lg p-2 sm:p-4 md:p-6 lg:p-8 mx-auto w-full lg:w-2/3">
         <h3 class="font-semibold text-lg lg:text-xl text-center mb-2">Attendant application Form</h3>
-        <form action="" id="attendantForm" class="flex flex-col gap-3 sm:gap-3 md:gap-4 lg:gap-5" netlify name="attendantApplication">
+        <form action="" id="attendantForm" class="flex flex-col gap-3 sm:gap-3 md:gap-4 lg:gap-5" netlify name="attendantApplication" data-netlify-recaptcha="true">
           <div class="flex flex-col gap-1 input">
             <label for="fname">First name</label>
             <input placeholder="Jane" type="text" name="fname" id="fname" class="p-2 rounded-md border focus:border-redhover outline-none">
@@ -605,7 +605,7 @@
               </div>
             </div>
           </div>
-         
+         <div data-netlify-recaptcha="true"></div>
           <div class="submit-btn">
             <button type="submit" class="w-full lg:w-2/5 mt-4 lg:mt-6 bg-red text-white p-2 rounded-lg text-center hover:bg-redhover transition-all">Submit</button>
           </div>
