@@ -543,9 +543,47 @@
             </select>
           </div>
 
-          <div class="formInput flex flex-col gap-1">
-            <label for="experience" class="text-lg font-medium">Experience (hours)</label>
-            <input type="text" name="experience" id="experience" class="p-2 rounded-md border focus:border-redhover outline-none" placeholder="750">
+          <div class="formInput flex flex-col gap-2">
+            <p class="text-lg font-medium">Experience:</p>
+            <p class="text-sm italic">Fill out what is applicable</p>
+            <div class="experience flex flex-col gap-2 bg-whiteBg p-2 rounded-md ">
+              <div class="input flex justify-between">
+                <label for="totalTime" class="font-medium">Total time (hours): </label>
+                <input type="text" name="totalTime" id="experience" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="commandTime" class="font-medium">Pilot in command time (hours): </label>
+                <input type="text" name="commandTime" id="commandTime" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="secondTime" class="font-medium">Second in command time (hours): </label>
+                <input type="text" name="secondTime" id="secondTime" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="multiEngine" class="font-medium">Multi-engine land: </label>
+                <input type="text" name="multiEngine" id="multiEngine" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="singleEngine" class="font-medium">Single-engine land: </label>
+                <input type="text" name="singleEngine" id="singleEngine" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="jetTime" class="font-medium">Jet time: </label>
+                <input type="text" name="jetTime" id="jetTime" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="turbineTime" class="font-medium">Turbine Time: </label>
+                <input type="text" name="turbineTime" id="turbineTime" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="heliHours" class="font-medium">Total helicopter horus: </label>
+                <input type="text" name="heliHours" id="heliHours" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+              <div class="input flex justify-between">
+                <label for="instructorHours" class="font-medium">Total instructor horus: </label>
+                <input type="text" name="instructorHours" id="instructorHours" class="p-0.5 rounded-md border focus:border-redhover outline-none" placeholder="750">
+              </div>
+            </div>
           </div>
 
           <div class="formInput flex flex-col gap-1">
@@ -554,20 +592,38 @@
               <input type="radio" name="license" id="yes" class="w-4 h-4">
               <label for="yes" class="text-md cursor-pointer">Yes</label>
             </div>
-            <select name="license_yes" id="license_yes" class="mt-2 mb-4 hidden cursor-pointer p-2 rounded-md border focus:border-redhover outline-none">
-              <option value="" disabled selected hidden>Select license type</option>
-              <option value="icao">ICAO</option>
-              <option value="faa">FAA</option>
-              <option value="easa">EASA</option>
-              <option value="uk_caa">UK CAA</option>
-              <option value="other">Other</option>
-            </select>
-            <input type="text" name="license_type" id="license_type" class="mb-2 hidden p-2 rounded-md border focus:border-redhover outline-none" placeholder="Please add the license type ">
-            <div class="radio flex items-center gap-2" id="license_no">
-              <input type="radio" name="license" id="no" class="w-4 h-4">
-              <label for="no" class="text-md cursor-pointer">No</label>
+            <div class="selectContainer hidden w-full" id="selectContainer">
+              <p class="text-sm italic">Select all that apply with CTRL (Windows) or Command (Mac)</p>
+              <select name="license_yes" id="license_yes" class="mt-2 mb-4 cursor-pointer p-2 rounded-md border focus:border-redhover outline-none w-full" multiple>
+                <!-- <option value="" disabled selected hidden>Select license type</option> -->
+                <option value="icao">ICAO</option>
+                <option value="faa">FAA</option>
+                <option value="easa">EASA</option>
+                <option value="uk_caa">UKCAA</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="icao_country">Enter country for ICAO license</label>
+              <input id="ICAO_country" type="text" name="icao_country" class="p-0.5 rounded-md border focus:border-redhover outline-none hidden"/>
+
+              <div class="hidden formInput uploads flex flex-col lg:flex-row gap-2 lg:gap-8 items-stretch lg:items-center mt-5" id="faa_verify_container">
+                <div class="flex flex-col gap-1">
+                  <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
+                    <button class="px-8 py-2 file-btn">FAA license verification<span class="text-white symbol">*</span></button>
+                    <input type='file' name="faa_license" id="faa_license" class="upload"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="selected_options" class="font-bold flex gap-2"></div>
+
             </div>
-          </div>
+            <input type="text" name="license_type" id="license_type" class="mb-2 hidden p-2 rounded-md border focus:border-redhover outline-none" placeholder="Please add the license type ">
+              <div class="radio flex items-center gap-2" id="license_no">
+                <input type="radio" name="license" id="no" class="w-4 h-4">
+                <label for="no" class="text-md cursor-pointer">No</label>
+              </div>
+            </div>
+            
 
           <div class="formInput flex flex-col gap-1">
             <p class="font-medium text-lg mb-1">Job type</p>
@@ -577,27 +633,42 @@
             </div>
 
             <div class="radio flex items-center gap-2">
-              <input type="radio" name="jobType" id="freelance" class="w-4 h-4">
+              <input type="radio" name="jobType2" id="freelance" class="w-4 h-4">
               <label for="freelance" class="text-md cursor-pointer">Freelance</label>
             </div>
           </div>
           
-          <div class="formInput uploads flex flex-col lg:flex-row gap-2 lg:gap-8 items-stretch lg:items-center mt-5">
+          <div class="visas flex flex-col gap-1">
+            <label for="visa" class="font-medium text-lg mb-1">Please enter any valid visas you have</label>
+            <input type="text" name="visa" id="visa" class="p-2 rounded-md border focus:border-redhover outline-none">
+          </div>
+
+          <div class="formInput uploads flex flex-col justify-center lg:flex-row gap-2 lg:gap-8 items-stretch lg:items-center mt-5">
             <div class="flex flex-col gap-1">
               <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
-                <button class="px-8 py-2 file-btn">Choose video file <span class="text-white symbol">*</span></button>
+                <button class="px-8 py-2 file-btn cursor-pointer">Choose video file</button>
                 <input type='file' name="videoUpload" id="videoUpload" class="upload"/>
               </div>
             </div>
             
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 justify-center">
               <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
-                <button class="px-8 py-2 file-btn">Choose CV file <span class="text-white symbol">*</span></button>
+                <button class="px-8 py-2 file-btn cursor-pointer">Choose CV file <span class="text-white symbol">*</span></button>
                 <input type='file' name="cvUpload" id="cvUpload" class="upload"/>
               </div>
             </div>
+            <div class="flex flex-col gap-1">
+              <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
+                <button class="px-8 py-2 file-btn cursor-pointer">Upload photo <span class="text-white symbol">*</span></button>
+                <input type='file' name="photoUpload" id="photoUpload" class="upload"/>
+              </div>
+            </div>
           </div>
+
+
          <div data-netlify-recaptcha="true"></div>
+
+
          <p class="font-semibold text-red italic hidden" id="validationMessage">Please enter all fields</p>
           <div class="submit-btn">
             <button type="submit" class="w-full lg:w-2/5 mt-4 lg:mt-6 bg-red text-white p-2 rounded-lg text-center hover:bg-redhover transition-all" id="submitBtn">Submit</button>

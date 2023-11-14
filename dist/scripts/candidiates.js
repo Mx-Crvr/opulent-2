@@ -50,7 +50,7 @@ const renderCandidates = (data) => {
           const jobTypeText = document.createElement('p')
           const jobType = document.createElement('p');
           columnOne.appendChild(jobType);
-          jobType.classList.add('text-md')
+          jobType.classList.add('text-md');
           jobType.textContent = jobTypeText.textContent = 'Type: ' + candidate.jobType;
 
         const columnTwo = document.createElement('div');
@@ -77,15 +77,6 @@ const renderCandidates = (data) => {
   });
 }
 
-const search = document.getElementById('search');
 
-const searchCandidates = () => {
-  const searchTerm = search.value.toLowerCase();
-  const filtered = jsonData.filter(candidate => candidate.title.toLowerCase().includes(searchTerm));
-  renderCandidates(filtered);
-  results.textContent =  filtered.length
-}
-
-search.addEventListener('input', searchCandidates)
 
 displayCandidates()

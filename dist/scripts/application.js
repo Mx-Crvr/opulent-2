@@ -11,7 +11,6 @@ const reveals = document.querySelectorAll('.reveal');
       reveals[i].classList.add('active')
     } else {
       reveals[i].classList.remove('active')
-      
     }
   };
 
@@ -43,13 +42,13 @@ const dob = document.getElementById('dob');
 const gender = document.getElementById('gender');
 const nationality = document.getElementById('nationality');
 const residence = document.getElementById('residence');
-const experience = document.getElementById('experience');
+// const experience = document.getElementById('experience');
 const license_yes = document.getElementById('license_yes');
 const license_no = document.getElementById('license_no');
 const license_type = document.getElementById('license_type');
 const permanent = document.getElementById('permanent');
 const freelance = document.getElementById('freelance');
-const videoUpload = document.getElementById('videoUpload');
+const photoUpload = document.getElementById('photoUpload');
 const cvUpload = document.getElementById('cvUpload');
 
 form.addEventListener('submit', (e) => {
@@ -82,9 +81,9 @@ form.addEventListener('submit', (e) => {
   if (residence.value === '') {
     isFormValid = false;
   }
-  if (experience.value === '') {
-    isFormValid = false;
-  }
+  // if (experience.value === '') {
+  //   isFormValid = false;
+  // }
   if (!yes.checked || !no.checked) {
     isFormValid = false;
   }
@@ -94,7 +93,7 @@ form.addEventListener('submit', (e) => {
   if (cvUpload.value === '') {
     isFormValid = false;
   }
-  if (videoUpload.value === '') {
+  if (photoUpload.value === '') {
     isFormValid = false;
   }
 
