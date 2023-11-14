@@ -7,7 +7,8 @@
     "nationality" : "South African",
     "experience" : "751 hours",
     "jobType" : "Freelance",
-    "licenceType" : "UKCAA"
+    "licenceType" : "UKCAA",
+    "languages" : "English"
   },
 
   {
@@ -18,7 +19,8 @@
     "nationality" : "American",
     "experience" : "4 years",
     "jobType" : "Freelance",
-    "licenceType" : "EASA"
+    "licenceType" : "EASA",
+    "languages" : "French"
   },
 
   {
@@ -29,7 +31,8 @@
     "nationality" : "British",
     "experience" : "70 hours",
     "jobType" : "Permanent",
-    "licenceType" : "FAA"
+    "licenceType" : "FAA",
+    "languages" : "Arabic, English"
   },
 
   {
@@ -40,6 +43,7 @@
     "nationality" : "British",
     "experience" : "7 years",
     "jobType" : "Permanent",
-    "licenceType" : "ICAO"
+    "licenceType" : "ICAO",
+    "languages" : "English, French"
   }
 ]

@@ -2,18 +2,21 @@
 
 const container = document.getElementById('candidatesContainer');
 const results = document.getElementById('results');
+const searchInput = document.getElementById('search');
 
 let jsonData = [];
 
 const displayCandidates = () => {
-  fetch('http://127.0.0.1:5500/dist/scripts/candidate.json')
+  fetch('../dist/scripts/candidate.json')
     .then(response => response.json())
     .then(data => {
       jsonData = data;
       results.textContent = data.length;
-
       renderCandidates(jsonData)
     })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
 }
 
 const renderCandidates = (data) => {
@@ -57,8 +60,6 @@ const renderCandidates = (data) => {
         infoContainer.appendChild(columnTwo);
         columnTwo.classList.add('flex', 'flex-col', 'justify-center', 'items-stretch', 'columnTwo')
 
-
-
           const dobText = document.createElement('p');
           const dob = document.createElement('p');
           columnTwo.appendChild(dob);
@@ -73,10 +74,40 @@ const renderCandidates = (data) => {
           const gender = document.createElement('p');
           columnTwo.appendChild(gender);
           gender.textContent = genderText.textContent = 'Gender: ' + candidate.gender;
-      
+
+        const columnThree = document.createElement('div');
+        infoContainer.appendChild(columnThree);
+        columnTwo.classList.add('flex', 'flex-col', 'justify-center', 'items-stretch', 'columnTwo');
+
+          const licenceTypeText = document.createElement('p');
+          const licenceType = document.createElement('p');
+          columnThree.appendChild(licenceType);
+          licenceType.textContent = licenceTypeText.textContent = 'Licence Type: ' + candidate.licenceType;
+
+          const languageText = document.createElement('p');
+          const language = document.createElement('p');
+          columnThree.appendChild(language);
+          language.textContent = licenceTypeText.textContent = 'Language(s): ' + candidate.languages;
   });
 }
 
+const filterCandidates = (query) => {
+  const filteredData = jsonData.filter(candidate => {
+    for (const key in candidate) {
+      if (candidate[key].toString().toLowerCase().includes(query.toLowerCase())) {
+        return true;
+      }
+    }
+    return false;
+  });
+  results.textContent = filteredData.length;
+  renderCandidates(filteredData);
+}
+
+searchInput.addEventListener('input', () => {
+  const inputValue = searchInput.value;
+  filterCandidates(inputValue)
+});
 
 
-displayCandidates()
+displayCandidates();
