@@ -1,11 +1,11 @@
 {
   "name": "opulent-air",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "tailwind:build": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css",
-    "tailwind:watch": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css --watch"
+    "tailwind:build": "tailwindcss -i ./src/input.css -o ./dist/styles.css",
+    "tailwind:watch": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "server": "nodemon src/server.js"
   },
   "author": "Max Evans",
   "license": "ISC",
@@ -13,6 +13,12 @@
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
-    "accordion-js": "^3.3.4"
-  }
+    "accordion-js": "^3.3.4",
+    "airtable": "^0.12.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [],
+  "description": ""
 }

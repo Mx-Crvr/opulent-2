@@ -6,12 +6,15 @@ const searchInput = document.getElementById('search');
 
 let jsonData = [];
 
+
+
 const displayCandidates = () => {
-  fetch('../dist/scripts/candidate.json')
+  fetch('../src/candidate.json')
     .then(response => response.json())
     .then(data => {
       jsonData = data;
       results.textContent = data.length;
+      sendDataToServer(jsonData);
       renderCandidates(jsonData)
     })
     .catch(error => {
@@ -38,42 +41,40 @@ const renderCandidates = (data) => {
         infoContainer.appendChild(columnOne);
         columnOne.classList.add('flex', 'flex-col', 'justify-center', 'items-stretch',)
 
-          const nameText = document.createElement('p');
-          const name = document.createElement('p');
-          columnOne.appendChild(name);
-          name.classList.add('text-md')
-          name.textContent = nameText.textContent = 'Name: ' + candidate.firstName;
-
           const xp = document.createElement('p');
           columnOne.appendChild(xp);
           const xpText = document.createElement('p');
           xp.classList.add('text-md')
-          xp.textContent = xpText.textContent = 'Experience: ' + candidate.experience;
+          xp.innerHTML = xpText.innerHTML = "<span class='text-md font-semibold'>Total time: </span>" + candidate.totalTime;
 
-          const jobTypeText = document.createElement('p')
-          const jobType = document.createElement('p');
-          columnOne.appendChild(jobType);
-          jobType.classList.add('text-md');
-          jobType.textContent = jobTypeText.textContent = 'Type: ' + candidate.jobType;
+          const ageText = document.createElement('p');
+          const age = document.createElement('p');
+          columnOne.appendChild(age);
+          age.innerHTML = ageText.innerHTML = "<span class='text-md font-semibold'>Age: </span>" + candidate.age;
+
+          const genderText = document.createElement('p');
+          const gender = document.createElement('p');
+          columnOne.appendChild(gender);
+          gender.innerHTML = genderText.innerHTML = "<span class='text-md font-semibold'>Gender: </span>" + candidate.gender;
 
         const columnTwo = document.createElement('div');
         infoContainer.appendChild(columnTwo);
         columnTwo.classList.add('flex', 'flex-col', 'justify-center', 'items-stretch', 'columnTwo')
 
-          const dobText = document.createElement('p');
-          const dob = document.createElement('p');
-          columnTwo.appendChild(dob);
-          dob.textContent = dobText.textContent = 'DOB: ' + candidate.dob;
-
           const nationalitytext = document.createElement('p');
           const nationality = document.createElement('p');
           columnTwo.appendChild(nationality);
-          nationality.textContent = nationalitytext.textContent = 'Nationality: ' + candidate.nationality;
+          nationality.innerHTML = nationalitytext.innerHTML = "<span class='text-md font-semibold'>Nationality: </span>" + candidate.nationality;
 
-          const genderText = document.createElement('p');
-          const gender = document.createElement('p');
-          columnTwo.appendChild(gender);
-          gender.textContent = genderText.textContent = 'Gender: ' + candidate.gender;
+          const residingCountryText = document.createElement('p');
+          const residingCountry = document.createElement('p');
+          columnTwo.appendChild(residingCountry);
+          residingCountry.innerHTML = residingCountryText.innerHTML = "<span class='text-md font-semibold'>Residence: </span>" + candidate.residingCountry;
+
+          const languageText = document.createElement('p');
+          const language = document.createElement('p');
+          columnTwo.appendChild(language);
+          language.innerHTML = languageText.innerHTML = "<span class='text-md font-semibold'>Language(s): </span>" + candidate.languages;
 
         const columnThree = document.createElement('div');
         infoContainer.appendChild(columnThree);
@@ -82,12 +83,27 @@ const renderCandidates = (data) => {
           const licenceTypeText = document.createElement('p');
           const licenceType = document.createElement('p');
           columnThree.appendChild(licenceType);
-          licenceType.textContent = licenceTypeText.textContent = 'Licence Type: ' + candidate.licenceType;
+          licenceType.innerHTML = licenceTypeText.innerHTML = "<span class='text-md font-semibold'>Licence Type: </span>" + candidate.licenceType;
 
-          const languageText = document.createElement('p');
-          const language = document.createElement('p');
-          columnThree.appendChild(language);
-          language.textContent = licenceTypeText.textContent = 'Language(s): ' + candidate.languages;
+          const aircraftTypeText = document.createElement('p');
+          const aircraftType = document.createElement('p');
+          columnThree.appendChild(aircraftType);
+          aircraftType.innerHTML = aircraftTypeText.innerHTML = "<span class='text-md font-semibold'>Aircraft type: </span>" + candidate.aircraftType;
+          
+          // Conditionals
+          if (candidate.title === 'Pilot') {
+            const timeInCommandText = document.createElement('p');
+            const timeInCommand = document.createElement('p');
+            columnThree.appendChild(timeInCommand);
+            timeInCommand.innerHTML = timeInCommandText.innerHTML = "<span class='text-md font-semibold'>Time in command: </span>" + candidate.timeInCommand;
+          }
+          
+          if (candidate.title === 'Flight attendant') {
+            const vipExperienceText = document.createElement('p');
+            const vipExperience = document.createElement('p');
+            columnThree.appendChild(vipExperience);
+            vipExperience.innerHTML = vipExperienceText.innerHTML = "<span class='text-md font-semibold'>VIP Experience: </span>" + candidate.vipExperience;
+          }
   });
 }
 

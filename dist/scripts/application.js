@@ -51,60 +51,60 @@ const freelance = document.getElementById('freelance');
 const photoUpload = document.getElementById('photoUpload');
 const cvUpload = document.getElementById('cvUpload');
 
-form.addEventListener('submit', (e) => {
-  const yes = document.getElementById('yes');
-  const no = document.getElementById('no');
+// form.addEventListener('submit', (e) => {
+//   const yes = document.getElementById('yes');
+//   const no = document.getElementById('no');
 
-  let isFormValid = true;
+//   let isFormValid = true;
 
-  if (fname.value === '') {
-    isFormValid = false;
-  }
-  if (lname.value === '') {
-    isFormValid = false;
-  }
-  if (email.value === '') {
-    isFormValid = false;
-  }
-  if (phone.value === '') {
-    isFormValid = false;
-  }
-  if (dob.value === '') {
-    isFormValid = false;
-  }
-  if (gender.value === '') {
-    isFormValid = false;
-  }
-  if (nationality.value === '') {
-    isFormValid = false;
-  }
-  if (residence.value === '') {
-    isFormValid = false;
-  }
-  // if (experience.value === '') {
-  //   isFormValid = false;
-  // }
-  if (!yes.checked || !no.checked) {
-    isFormValid = false;
-  }
-  if (!freelance.checked || !permanent.checked) {
-    isFormValid = false;
-  }
-  if (cvUpload.value === '') {
-    isFormValid = false;
-  }
-  if (photoUpload.value === '') {
-    isFormValid = false;
-  }
+//   if (fname.value === '') {
+//     isFormValid = false;
+//   }
+//   if (lname.value === '') {
+//     isFormValid = false;
+//   }
+//   if (email.value === '') {
+//     isFormValid = false;
+//   }
+//   if (phone.value === '') {
+//     isFormValid = false;
+//   }
+//   if (dob.value === '') {
+//     isFormValid = false;
+//   }
+//   if (gender.value === '') {
+//     isFormValid = false;
+//   }
+//   if (nationality.value === '') {
+//     isFormValid = false;
+//   }
+//   if (residence.value === '') {
+//     isFormValid = false;
+//   }
+//   // if (experience.value === '') {
+//   //   isFormValid = false;
+//   // }
+//   if (!yes.checked || !no.checked) {
+//     isFormValid = false;
+//   }
+//   if (!freelance.checked || !permanent.checked) {
+//     isFormValid = false;
+//   }
+//   if (cvUpload.value === '') {
+//     isFormValid = false;
+//   }
+//   if (photoUpload.value === '') {
+//     isFormValid = false;
+//   }
 
-  if (!isFormValid) {
-    e.preventDefault();
-    formInput.forEach((input) => {
-      input.classList.add('border', 'border-red', 'p-2')
-      validationMessage.classList.remove('hidden')
-    })
-  }
-})
+//   if (!isFormValid) {
+//     e.preventDefault();
+//     formInput.forEach((input) => {
+//       input.classList.add('border', 'border-red', 'p-2')
+//       validationMessage.classList.remove('hidden')
+//     })
+//   }
+// })
 
 
 

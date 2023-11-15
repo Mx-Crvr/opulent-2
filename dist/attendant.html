@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Opulent Air Crew | Attendant Application</title>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet"  href="./styles.css">
   <script src="./scripts/animation.js" defer></script>
   <script src="./scripts/application.js" defer></script>
   <script src="./scripts/form.js" defer></script>
@@ -13,7 +13,7 @@
   <header>
     <nav id="navbar" class="z-50 backdrop-blur-sm w-full opacity-1 fixed px-4 md:px-16 lg:px-24 py-8 flex items-center justify-between bg-white text-black">
       <!-- Desktop nav -->
-      <a href="../index.html" id="brand" class="w-4/12 lg:w-2/12 font-lora text-2xl md:text-3xl lg:text-5xl w-2/12"><img src="../src/imgs/logo.webp" alt="logo" class="w-full"></a>
+      <a href="../index.html" id="brand" class="w-4/12 lg:w-2/12 font-lora text-2xl md:text-3xl lg:text-5xl w-2/12"><img src="./imgs/logo.webp" alt="logo" class="w-full"></a>
       <div class="nav-links items-center justify-between gap-12 hidden lg:flex">
         <a href="./operator.html" class="text-black font-semibold hover:text-redhover transition-color duration-200">Candidate Database</a>
         <a href="./pilot.html" class="text-black font-semibold hover:text-redhover transition-color duration-200">Pilots</a>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="img w-full lg:w-1/2">
-          <img src="../src/imgs/attendant_hero.webp" alt="Cabin" class="rounded-lg w-full">
+          <img src="./imgs/attendant-tray.webp" alt="Cabin" class="rounded-lg w-full">
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
       <h2 class="font-semibold text-xl lg:text-2xl mb-5 lg:mb-10 text-center lg:text-start">Join our mentorship programme</h2>
       <div class="form flex flex-col items-stretch justify-center bg-slate-200 border border-slate-300 shadow-lg rounded-lg p-2 sm:p-4 md:p-6 lg:p-8 mx-auto w-full lg:w-2/3">
         <h3 class="font-semibold text-lg lg:text-xl text-center mb-2">Attendant application Form</h3>
-        <form action="" id="attendantForm" class="flex flex-col gap-3 sm:gap-3 md:gap-4 lg:gap-5" netlify name="attendantApplication" data-netlify-recaptcha="true">
+        <form  id="attendantForm" class="flex flex-col gap-3 sm:gap-3 md:gap-4 lg:gap-5" netlify name="attendantApplication" data-netlify-recaptcha="true">
           <div class="formInput flex flex-col gap-1 input">
             <label for="fname">First name</label>
             <input placeholder="Jane" type="text" name="fname" id="fname" class="p-2 rounded-md border focus:border-redhover outline-none">
@@ -86,8 +86,8 @@
           </div>
 
           <div class="formInput flex flex-col gap-1 input">
-            <label for="dob">Date of birth</label>
-            <input type="date" name="dob" id="dob" class="p-2 rounded-md border focus:border-redhover outline-none">
+            <label for="age">Age</label>
+            <input type="number" name="age" id="dob" class="p-2 rounded-md border focus:border-redhover outline-none">
           </div>
 
           <div class="formInput flex flex-col gap-1 input">
@@ -562,25 +562,42 @@
               <input type="radio" name="license" id="yes" class="w-4 h-4">
               <label for="yes" class="text-md cursor-pointer">Yes</label>
             </div>
-            <select name="license_yes" id="license_yes" class="mt-2 mb-4 hidden cursor-pointer p-2 rounded-md border focus:border-redhover outline-none">
-              <option value="" disabled selected hidden>Select license type</option>
-              <option value="icao">ICAO</option>
-              <option value="faa">FAA</option>
-              <option value="easa">EASA</option>
-              <option value="uk_caa">UK CAA</option>
-              <option value="other">Other</option>
-            </select>
-            <input type="text" name="license_type" id="license_type" class="mb-2 hidden p-2 rounded-md border focus:border-redhover outline-none" placeholder="Please add the license type ">
-            <div class="radio flex items-center gap-2" id="license_no">
-              <input type="radio" name="license" id="no" class="w-4 h-4">
-              <label for="no" class="text-md cursor-pointer">No</label>
+            <div class="selectContainer hidden w-full" id="selectContainer">
+              <p class="text-sm italic" id="random">Select all that apply with CTRL (Windows) or Command (Mac)</p>
+              <select name="license_yes" id="license_yes" class="mt-2 mb-4 cursor-pointer p-2 rounded-md border focus:border-redhover outline-none w-full" multiple>
+                <!-- <option value="" disabled selected hidden>Select license type</option> -->
+                <option value="icao">ICAO</option>
+                <option value="faa">FAA</option>
+                <option value="easa">EASA</option>
+                <option value="uk_caa">UKCAA</option>
+                <option value="other">Other</option>
+              </select>
+
+              
+
+              <div class="hidden formInput uploads flex flex-col gap-2 lg:gap-8 items-stretch  mt-5" id="faa_verify_container">
+                <label for="icao_country">Enter country for ICAO license</label>
+                <input id="ICAO_country" type="text" name="icao_country" class="p-0.5 rounded-md border focus:border-redhover outline-none"/>
+                <div class="flex flex-col gap-1">
+                  <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
+                    <button class="px-8 py-2 file-btn hidden" id="faa_btn">FAA license verification<span class="text-white symbol">*</span></button>
+                    <input type='file' name="faa_license" id="faa_license" class="upload"/>
+                  </div>
+                </div>
+                <div id="selected_options" class="font-bold flex gap-2"></div>
+              </div>
             </div>
+            <input type="text" name="license_type" id="license_type" class="mb-2 hidden p-2 rounded-md border focus:border-redhover outline-none" placeholder="Please add the license type ">
+              <div class="radio flex items-center gap-2" id="license_no">
+                <input type="radio" name="license" id="no" class="w-4 h-4">
+                <label for="no" class="text-md cursor-pointer">No</label>
+              </div>
           </div>
 
           <div class="formInput flex flex-col gap-1">
             <p class="font-medium text-lg mb-1">Job type</p>
             <div class="radio flex items-center gap-2">
-              <input type="radio" name="jobType" id="permanent" class="w-4 h-4">
+              <input type="radio" name="jobTypes" id="permanent" class="w-4 h-4">
               <label for="permanent" class="text-md cursor-pointer">Permanent</label>
             </div>
 
@@ -593,7 +610,7 @@
           <div class="formInput uploads flex flex-col lg:flex-row gap-2 lg:gap-8 items-stretch lg:items-center mt-5">
             <div class="flex flex-col gap-1">
               <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
-                <button class="px-8 py-2 file-btn">Choose video file <span class="text-white symbol">*</span></button>
+                <button class="px-8 py-2 file-btn">Choose video file</button>
                 <input type='file' name="videoUpload" id="videoUpload" class="upload"/>
               </div>
             </div>
@@ -602,6 +619,13 @@
               <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
                 <button class="px-8 py-2 file-btn">Choose CV file <span class="text-white symbol">*</span></button>
                 <input type='file' name="cvUpload" id="cvUpload" class="upload"/>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
+                <button class="px-8 py-2 file-btn">Upload photo<span class="text-white symbol">*</span></button>
+                <input type='file' name="photoUpload" id="photoUpload" class="upload"/>
               </div>
             </div>
           </div>

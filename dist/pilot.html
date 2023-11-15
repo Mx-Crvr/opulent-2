@@ -13,7 +13,7 @@
   <header>
     <nav id="navbar" class="z-50 backdrop-blur-sm w-full opacity-1 fixed px-4 md:px-16 lg:px-24 py-8 flex items-center justify-between bg-white text-black">
       <!-- Desktop nav -->
-      <a href="../index.html" id="brand" class="w-4/12 lg:w-2/12 font-lora text-2xl md:text-3xl lg:text-5xl w-2/12"><img src="../src/imgs/logo.webp" alt="logo" class="w-full"></a>
+      <a href="../index.html" id="brand" class="w-4/12 lg:w-2/12 font-lora text-2xl md:text-3xl lg:text-5xl w-2/12"><img src="./imgs/logo.webp" alt="logo" class="w-full"></a>
       <div class="nav-links items-center justify-between gap-12 hidden lg:flex">
         <a href="./operator.html" class="text-black font-semibold hover:text-redhover transition-color duration-200">Candidate Database</a>
         <a href="#" class="text-gray font-semibold underline">Pilots</a>
@@ -48,7 +48,7 @@
           <a href="#form" class="text-red hover:text-redhover transition-all hover:scale-95 text-md lg:text-lg">Register below</a>
         </div>
         <div class="img w-full lg:w-1/2">
-          <img src="../src/imgs/pilot_hero.webp" alt="Cabin" class="rounded-lg w-full">
+          <img src="./imgs/pilot_hero.webp" alt="Cabin" class="rounded-lg w-full">
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
     <div id="form" class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24">
       <div class="form flex flex-col items-stretch justify-center bg-slate-200 border border-slate-300 shadow-lg rounded-lg p-2 sm:p-4 md:p-6 lg:p-8 w-full lg:w-2/3 mx-auto">
         <h3 class="font-semibold text-lg lg:text-xl text-center mb-2">Pilot application Form</h3>
-        <form action="" id="pilotForm" class="form flex flex-col gap-3 sm:gap-3 md:gap-4 lg:gap-5" netlify name="pilotApplication" data-netlify-recaptcha="true">
+        <form action="/pilot" method="POST" id="pilotForm" class="form flex flex-col gap-3 sm:gap-3 md:gap-4 lg:gap-5" netlify name="pilotApplication" data-netlify-recaptcha="true">
           <div class="formInput flex flex-col gap-1">
             <label for="fname" class="text-lg font-medium">First name</label>
             <input placeholder="Jane" type="text" name="fname" id="fname" class="p-2 rounded-md border focus:border-redhover outline-none">
@@ -78,8 +78,8 @@
           </div>
 
           <div class="formInput flex flex-col gap-1">
-            <label for="dob" class="text-lg font-medium">Date of birth</label>
-            <input type="date" name="dob" id="dob" class="p-2 rounded-md border focus:border-redhover outline-none">
+            <label for="dob" class="text-lg font-medium">Age</label>
+            <input type="number" name="dob" id="dob" class="p-2 rounded-md border focus:border-redhover outline-none" placeholder="28 years old">
           </div>
 
           <div class="formInput flex flex-col gap-1">
@@ -593,7 +593,7 @@
               <label for="yes" class="text-md cursor-pointer">Yes</label>
             </div>
             <div class="selectContainer hidden w-full" id="selectContainer">
-              <p class="text-sm italic">Select all that apply with CTRL (Windows) or Command (Mac)</p>
+              <p class="text-sm italic" id="random">Select all that apply with CTRL (Windows) or Command (Mac)</p>
               <select name="license_yes" id="license_yes" class="mt-2 mb-4 cursor-pointer p-2 rounded-md border focus:border-redhover outline-none w-full" multiple>
                 <!-- <option value="" disabled selected hidden>Select license type</option> -->
                 <option value="icao">ICAO</option>
@@ -602,28 +602,65 @@
                 <option value="uk_caa">UKCAA</option>
                 <option value="other">Other</option>
               </select>
-              <label for="icao_country">Enter country for ICAO license</label>
-              <input id="ICAO_country" type="text" name="icao_country" class="p-0.5 rounded-md border focus:border-redhover outline-none hidden"/>
+
+              
 
               <div class="hidden formInput uploads flex flex-col lg:flex-row gap-2 lg:gap-8 items-stretch lg:items-center mt-5" id="faa_verify_container">
+                <label for="icao_country">Enter country for ICAO license</label>
+                <input id="ICAO_country" type="text" name="icao_country" class="p-0.5 rounded-md border focus:border-redhover outline-none hidden"/>
                 <div class="flex flex-col gap-1">
                   <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
-                    <button class="px-8 py-2 file-btn">FAA license verification<span class="text-white symbol">*</span></button>
+                    <button class="px-8 py-2 file-btn hidden" id="faa_btn">FAA license verification<span class="text-white symbol">*</span></button>
                     <input type='file' name="faa_license" id="faa_license" class="upload"/>
                   </div>
                 </div>
+                <div id="selected_options" class="font-bold flex gap-2"></div>
               </div>
-
-              <div id="selected_options" class="font-bold flex gap-2"></div>
-
             </div>
             <input type="text" name="license_type" id="license_type" class="mb-2 hidden p-2 rounded-md border focus:border-redhover outline-none" placeholder="Please add the license type ">
               <div class="radio flex items-center gap-2" id="license_no">
                 <input type="radio" name="license" id="no" class="w-4 h-4">
                 <label for="no" class="text-md cursor-pointer">No</label>
               </div>
-            </div>
+          </div>
             
+          <div class="selectContainer w-full">
+            <p class="font-medium text-lg mb-1">Please select aircraft types that are applicable</p>
+            <p class="text-sm italic" id="random">Select all that apply with CTRL (Windows) or Command (Mac)</p>
+            <select name="aircraftSelect" id="aircraftSelect" class="mt-2 mb-4 cursor-pointer p-2 rounded-md border focus:border-redhover outline-none w-full" multiple>
+              <!-- <option value="" disabled selected hidden>Select license type</option> -->
+              <option value="censna">Censna</option>
+              <option value="beechcraft">Beechcraft</option>
+              <option value="atr">ATR</option>
+              <option value="hawkerBeechcraft">HawkerBeechcraft</option>
+              <option value="embrear">Embrear</option>
+              <option value="legacy">Legacy</option>
+              <option value="bombardier">Bombardier</option>
+              <option value="bombardierChallenger">Bombardier Challenger</option>
+              <option value="bombardierGlobal">Bombardier Global</option>
+              <option value="gulfstream">Gulfstream</option>
+              <option value="dassault">Dassault</option>
+              <option value="dassaultFelcon">Dassault Felcon</option>
+              <option value="boeing">Boeing</option>
+              <option value="airbus">Airbus</option>
+            </select>
+
+            <div id="selected_options_aircraft" class="font-bold flex gap-2"></div>
+
+          </div>
+            
+
+          <div class="hidden formInput uploads flex flex-col lg:flex-row gap-2 lg:gap-8 items-stretch lg:items-center mt-5" id="faa_verify_container">
+              <label for="icao_country">Enter country for ICAO license</label>
+              <input id="ICAO_country" type="text" name="icao_country" class="p-0.5 rounded-md border focus:border-redhover outline-none hidden"/>
+              <div class="flex flex-col gap-1">
+                <div class="file-wrapper input flex flex-col gap-1 items-stretch justify-center w-full button-container border border-superblack bg-superblack hover:bg-black hover:border-black text-white transition-all text-center cursor-pointer">
+                  <button class="px-8 py-2 file-btn hidden" id="faa_btn">FAA license verification<span class="text-white symbol">*</span></button>
+                  <input type='file' name="faa_license" id="faa_license" class="upload"/>
+                </div>
+              </div>
+              <div id="selected_options" class="font-bold flex gap-2"></div>
+          </div>
 
           <div class="formInput flex flex-col gap-1">
             <p class="font-medium text-lg mb-1">Job type</p>

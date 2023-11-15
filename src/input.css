@@ -22,15 +22,10 @@
   border: 1px solid red;
 }
 
-.columnTwo {
-  min-width: 50%;
-  /* max-width: 12em; */
-}
-
 #landingpage {
   height: 100vh;
-  box-shadow: 4000px 4000px inset #000000ad;
-  background-image: url(../src/imgs/black_gulf.webp);
+  box-shadow: 4000px 4000px inset #000000b4;
+  background-image: url('../dist/imgs/black_gulf.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
