@@ -1,91 +1,157 @@
-"use strict"
+let validLicense = document.getElementById('validLicense');
+const invalidLicenseContainer = document.getElementById('invalidLicenseContainer');
+const invalidLicense = document.getElementById('invalidLicense');
+const licenseSelectContainer = document.getElementById('licenseSelectContainer');
+// const licenseContainer = document.getElementById('licenseContainer');
+const licenseSelectHTML = document.getElementById('licenseSelect');
+const icaoInput = document.getElementById('icaoInput');
+const icaoInputContainer = document.getElementById('icaoInputContainer');
+const FAAInputContainer = document.getElementById('FAAInputContainer');
+const jobTypeContainer = document.getElementById('jobTypeContainer');
+const visaContainer = document.getElementById('visaContainer');
+const cvUploadContainer = document.getElementById('cvUploadContainer');
+const photoUploadContainer = document.getElementById('photoUploadContainer');
+const validationMessage = document.getElementById('validationMessage');
+let selectedValues = [];
+let getURL = window.location.href;
 
-const yes = document.getElementById('yes');
-const noRadio = document.getElementById('no');
-const no = document.getElementById('license_no');
-const dropdown = document.getElementById('license_yes');
-const licenseType = document.getElementById('license_type');
-const selectContainer = document.getElementById('selectContainer');
-const ICAO_country = document.getElementById('ICAO_country');
+const getSelectedLicense = () => {
+  const licenseSelect = Array.from(licenseSelectHTML.selectedOptions);
+  for (let i =0; i < licenseSelect.length; i++) {
+    selectedValues[i] = licenseSelect[i].value;
+  };
+  
+  if (selectedValues.includes('ICAO')) {
+    icaoInputContainer.classList.remove('hidden');
+  } else if (!selectedValues.includes('ICAO')) {
+    icaoInputContainer.classList.add('hidden');
+  };
 
-yes.addEventListener('change', () => {
-  selectContainer.classList.remove('hidden');
-})
+  if (selectedValues.includes('FAA')) {
+    FAAInputContainer.classList.remove('hidden');
+  } else if (!selectedValues.includes('FAA')) {
+    FAAInputContainer.classList.add('hidden');
+  };
+}
 
-no.addEventListener('input', () => {
-  dropdown.classList.add('hidden');
-  licenseType.classList.add('hidden');
-})
-
-dropdown.addEventListener('input', () => {
-  if (dropdown.value == "other") {
-    licenseType.classList.remove('hidden')
+setInterval(() => {
+  if (validLicense.checked) {
+    invalidLicenseContainer.classList.add('hidden');
+    licenseSelectContainer.classList.remove('hidden');
+    getSelectedLicense();
+    validLicense.value = true;
   } else {
-    licenseType.classList.add('hidden')
+    invalidLicenseContainer.classList.remove('hidden');
+    licenseSelectContainer.classList.add('hidden');
+    icaoInputContainer.classList.add('hidden');
+    FAAInputContainer.classList.add('hidden');
+    selectedValues = [];
   }
 
-  if (noRadio.checked) {
-    document.getElementById('selectContainer').classList.add('hidden')
-    document.getElementById('random').classList.add('hidden');
-  }
-
-  if (dropdown.value == "faa") {
-    document.getElementById('faa_verify_container').classList.remove('hidden');
-    document.getElementById('faa_btn').classList.remove('hidden');
-  } else {
-    document.getElementById('faa_verify_container').classList.add('hidden');
-    document.getElementById('faa_btn').classList.add('hidden');
-  }
-
-  if (dropdown.value == 'icao') {
-    document.getElementById('ICAO_country').classList.remove('hidden');
-    document.getElementById('faa_verify_container').classList.remove('hidden');
-
-  } else {
-    document.getElementById('ICAO_country').classList.add('hidden');
+  if (invalidLicense.checked) {
+    validLicense.value = 'false';
     
   }
-})
+}, 100);
 
-// // Pilot Form Submit Handler
-// const pilotForm = document.getElementById('pilotForm');
+// Form validation
+let formHTML = document.querySelectorAll('.form');
+const form = formHTML[0];
 
-
-
-// // Attendant Form Submit Handler
-// const attendantForm = document.getElementById('attendantForm');
-document.addEventListener('DOMContentLoaded', () => {
-  const aircraftSelect = document.getElementById('aircraftSelect'); 
-  let selectedOptions = document.getElementById('selected_options');
-  let selectedOptionsAircraft = document.getElementById('selected_options_aircraft');
-  dropdown.addEventListener('change', () => {
-    selectedOptions.innerHTML = '';
-
-    for (let i = 0; i < dropdown.options.length; i++) {
-      if (dropdown.options[i].selected) {
-        const selectedOption = document.createElement('div');
-        selectedOption.textContent += dropdown.options[i].text;
-        selectedOptions.appendChild(selectedOption)
-      }
+form.addEventListener('submit', (e) => {
+  // Validate required fields
+  const requiredFields =  getURL.includes('attendant') ? 
+  ['fname', 'lname', 'email', 'age', 'gender', 'phone', 'age', 'nationality', 'residence', 'vipExperience', 'visa', 'cvUpload', 'photoUpload'] : ['fname', 'lname', 'email', 'age', 'gender', 'phone', 'age', 'nationality', 'residence', 'visa', 'cvUpload', 'photoUpload']
+  ;
+  for (const field of requiredFields) {
+    const inputElement = document.getElementById(field);
+    if (inputElement.value === '') {
+      inputElement.classList.add('border-2', 'border-red', 'p-1');
+      e.preventDefault();
+      return;
+    } else {
+      inputElement.classList.remove('border-2', 'border-red', 'p-1');
     }
-  })
-
-  const getURL = window.location.href;
-
-  if (getURL.includes('operator')) {
-    aircraftSelect.addEventListener('change', () => {
-      selectedOptionsAircraft.innerHTML = '';
-  
-      for (let i = 0; i < aircraftSelect.options.length; i++) {
-        if (aircraftSelect.options[i].selected) {
-          const selectedOptionAircraft = document.createElement('div');
-          selectedOptionAircraft.textContent += aircraftSelect.options[i].text == '' ? `${aircraftSelect.options[i].text}` : `${aircraftSelect.options[i].text}, `;
-          selectedOptionsAircraft.appendChild(selectedOptionAircraft)
-        }
-      }
-    })
   }
- 
 
-  
-})
+  // Check if the "validLicense" or "invalidLicense" is selected
+  const validLicense = document.getElementById('validLicense');
+  const invalidLicense = document.getElementById('invalidLicense');
+  const licenseContainer = document.getElementById('licenseContainer');
+  const yesNoMessage = document.getElementById('yesNoMessage');
+
+  if (!validLicense.checked && !invalidLicense.checked) {
+    licenseContainer.classList.add('border-2', 'border-red');
+    yesNoMessage.classList.remove('hidden');
+    e.preventDefault();
+    return;
+  } else {
+    licenseContainer.classList.remove('border-2', 'border-red');
+    yesNoMessage.classList.add('hidden');
+  }
+
+  // Check if the "validLicense" is selected, ensure that the "licenseSelect" field is not empty
+  const licenseSelectHTML = document.getElementById('licenseSelect');
+  const licenseSelectContainer = document.getElementById('licenseSelectContainer');
+
+  if (validLicense.checked && licenseSelectHTML.value === '') {
+    licenseSelectContainer.classList.add('border-2', 'border-red');
+    e.preventDefault();
+    return;
+  } else {
+    licenseSelectContainer.classList.remove('border-2', 'border-red');
+  }
+
+  // Check if selected licenses include 'ICAO', ensure that the 'icaoInput' field is not empty
+  const selectedValues = Array.from(licenseSelectHTML.selectedOptions).map(option => option.value);
+  const icaoInput = document.getElementById('icaoInput');
+  const icaoInputContainer = document.getElementById('icaoInputContainer');
+
+  if (selectedValues.includes('ICAO') && icaoInput.value === '') {
+    icaoInputContainer.classList.add('border-2', 'border-red');
+    e.preventDefault();
+    return;
+  } else {
+    icaoInputContainer.classList.remove('border-2', 'border-red');
+  }
+
+  // Check if selected licenses include 'FAA', ensure that the 'FAAInput' field is not empty
+  const FAAInput = document.getElementById('FAAInput');
+  const FAAInputContainer = document.getElementById('FAAInputContainer');
+
+  if (selectedValues.includes('FAA') && FAAInput.value === '') {
+    FAAInputContainer.classList.add('border-2', 'border-red');
+    e.preventDefault();
+    return;
+  } else {
+    FAAInputContainer.classList.remove('border-2', 'border-red');
+  }
+
+  // Ensure that at least one of the job types (permanent or freelance) is checked
+  const permanentCheckbox = form.permanent;
+  const freelanceCheckbox = form.freelance;
+  const jobTypeContainer = document.getElementById('jobTypeContainer');
+  const pAndFMessage = document.getElementById('pAndFMessage');
+
+  if (!permanentCheckbox.checked && !freelanceCheckbox.checked) {
+    jobTypeContainer.classList.add('border-2', 'border-red');
+    pAndFMessage.classList.remove('hidden');
+    e.preventDefault();
+    return;
+  } else {
+    jobTypeContainer.classList.remove('border-2', 'border-red');
+    pAndFMessage.classList.add('hidden');
+  }
+
+  // Additional checks for other conditions
+
+  // ...
+
+  // If all checks pass, the form will be submitted
+});
+
+
+
+
+
+

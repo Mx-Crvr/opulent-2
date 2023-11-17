@@ -20,6 +20,7 @@ module.exports = {
       halfred: '#bb06069c',
       black_half: '#313139af',
       redhover: '#ce1e1e',
+      redfocus: '#ce1e1e4b',
       black: '#313139',
       superblack: '#000000',
       white: '#FFFFFF',

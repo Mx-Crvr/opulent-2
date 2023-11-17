@@ -6,7 +6,7 @@
   <title>Operator</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./scripts/navbar.js" defer></script>
-  <script src="./scripts/candidiates.js" defer></script>
+  <script src="./scripts/candidatesData.js" defer></script>
 </head>
 <body class="font-poppins font-light">
   <header>
@@ -34,18 +34,19 @@
   </header>
 
   <main id="main">
-    <div id="hero_section" class="px-4 md:px-16 lg:px-24 pt-36">
-
+    <div id="hero_section" class="px-4 md:px-16 lg:px-24 pt-36 flex justify-center items-center">
+      <div id="btnGroup" class="hidden buttons flex justify-center items-center gap-3 w-full">
+        <button class="w-full lg:w-2/5 mt-4 lg:mt-6 bg-red text-white p-2 rounded-lg text-center hover:bg-redhover transition-all" id="attendantBtn">Show me flight attendants</button>
+        <button class="w-full lg:w-2/5 mt-4 lg:mt-6 bg-red text-white p-2 rounded-lg text-center hover:bg-redhover transition-all" id="pilotBtn">Show me pilots</button>
+      </div>
+      
+      <div id="attendants-container" class="flex flex-col w-full pb-5 hidden mt-5"><h2 class="text-3xl font-semibold">Flight attendants</h2></div>
+      <div id="pilots-container" class="hidden"></div>
+      <div id="contacts-container" class="hidden"></div>
     </div>
     
 
-    <div id="container" class="px-4 md:px-16 lg:px-24 py-8 flex flex-col ">
-      <input type="text" id="search" class="border border-red rounded-md shadow-sm text-lg p-2 mb-4 outline-none focus:border-redhover">      
-      <p class="mb-2">Showing <span id="results" class="text-redhover"></span> results</p>
-      <div id="candidatesContainer" class="flex flex-col items-stretch justify-center gap-4">
-
-      </div>
-    </div>
+    
   <footer class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24 bg-pureblack reveal flex flex-col gap-12">
     <div class="flex flex-col justify-center items-center gap-5">
       
