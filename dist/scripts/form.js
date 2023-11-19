@@ -72,7 +72,7 @@ form.addEventListener('submit', (e) => {
     } else {
       inputElement.classList.remove('border-2', 'border-red', 'p-1');
     }
-  }
+  };
 
   // Check if the "validLicense" or "invalidLicense" is selected
   const validLicense = document.getElementById('validLicense');
