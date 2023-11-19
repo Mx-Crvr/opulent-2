@@ -242,9 +242,6 @@ async function fetchRecords(table) {
     });
   });
 }
-app.listen(process.env.PORT, () => {
-  console.log('Server listening on port:', port)
-  console.log(`http://localhost:${port}`)
-})
+app.listen(process.env.PORT);
 
 
