@@ -5,7 +5,8 @@
   "scripts": {
     "tailwind:build": "tailwindcss -i ./src/input.css -o ./dist/styles.css",
     "tailwind:watch": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
-    "server": "nodemon src/server.js"
+    "server": "nodemon src/server.js",
+    "build": "node src/server.js"
   },
   "author": "Max Evans",
   "license": "ISC",
