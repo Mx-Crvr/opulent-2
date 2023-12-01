@@ -15,6 +15,10 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
+app.use(
+	'/dist',
+	express.static(path.join(__dirname, '../dist', '../dist/styles.css'))
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -37,6 +41,7 @@ cloudinary.config({
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../index.html'));
 });
+
 // @route     : Attendant table
 // @origin    : /attendant form
 app.post('/attendant', async (req, res) => {
@@ -73,6 +78,7 @@ app.post('/attendant', async (req, res) => {
 						? req.body.licenseSelect
 						: [req.body.licenseSelect],
 					Nationality: req.body.nationality,
+
 					Country_of_residence: req.body.residence,
 					VIP_Experience: req.body.vipExperience,
 					Valid_licence: req.body.validLicense,
@@ -107,7 +113,9 @@ app.post('/attendant', async (req, res) => {
 				},
 			};
 			await attendantsTable.create([airtableRecord]);
-			res.send('Record created successfully');
+			res.send(
+				'Thank you for your application. We will be in touch soon'
+			);
 		} catch (error) {
 			console.error(error);
 			res.status(500).send('Error creating record');
@@ -145,15 +153,15 @@ app.post('/pilot', async (req, res) => {
 					Phone_number: req.body.phone,
 					Age: req.body.age,
 					Gender: req.body.gender,
-					// Total_Time: req.body.totalTime,
-					// Command_Time: req.body.commandTime,
-					// Time_in_Second_Command: req.body.secondTime,
-					// Single_Engine_Land: req.body.singleEngine,
-					// Multi_Engine_Land: req.body.multiEngine,
-					// Jet_Time: req.body.jetTime,
-					// Turbine_Time: req.body.turbineTime,
-					// Total_Helicopter_Hours: req.body.heliHours,
-					// Total_Instructor_Hours: req.body.instructorHours,
+					Total_Time: req.body.totalTime,
+					Command_Time: req.body.commandTime,
+					Time_in_Second_Command: req.body.secondTime,
+					Single_Engine_Land: req.body.singleEngine,
+					Multi_Engine_Land: req.body.multiEngine,
+					Jet_Time: req.body.jetTime,
+					Turbine_Time: req.body.turbineTime,
+					Total_Helicopter_Hours: req.body.heliHours,
+					Total_Instructor_Hours: req.body.instructorHours,
 					License_Type: Array.isArray(req.body.licenseSelect)
 						? req.body.licenseSelect
 						: [req.body.licenseSelect],
@@ -191,7 +199,10 @@ app.post('/pilot', async (req, res) => {
 				},
 			};
 			await pilotsTable.create([airtableRecord]);
-			res.send('Record created successfully');
+			res.send(
+				'Thank you for your application. We will be in touch soon'
+			);
+			// res.sendFile(path.join(__dirname, '../dist/styles.css'));
 			console.log('It worked');
 		} catch (error) {
 			console.error(error);
