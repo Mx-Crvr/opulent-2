@@ -187,10 +187,4 @@ form.addEventListener('submit', (e) => {
 		jobTypeContainer.classList.remove('border-2', 'border-red');
 		pAndFMessage.classList.add('hidden');
 	}
-
-	// Additional checks for other conditions
-
-	// ...
-
-	// If all checks pass, the form will be submitted
 });

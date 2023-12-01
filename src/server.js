@@ -69,13 +69,17 @@ app.post('/attendant', async (req, res) => {
 					Phone_number: req.body.phone,
 					Age: req.body.age,
 					Gender: req.body.gender,
-					License_Type: req.body.licenseSelect,
+					License_Type: Array.isArray(req.body.licenseSelect)
+						? req.body.licenseSelect
+						: [req.body.licenseSelect],
 					Nationality: req.body.nationality,
 					Country_of_residence: req.body.residence,
 					VIP_Experience: req.body.vipExperience,
 					Valid_licence: req.body.validLicense,
 					Visas: req.body.visa,
-					Aircraft_Type: req.body.aircraftSelect,
+					Aircraft_Type: Array.isArray(req.body.aircraftSelect)
+						? req.body.aircraftSelect
+						: [req.body.aircraftSelect],
 					Country_ICAO: req.body.icaoInput,
 					FAA_Verification: faaResult
 						? [
@@ -119,6 +123,7 @@ app.post('/pilot', async (req, res) => {
 				console.error(err);
 				return res.status(500).send('Error uploading file');
 			}
+			console.log(req.body.licenseSelect);
 			const hasValidLicense = req.body.validLicense === 'true';
 			const licenseType = hasValidLicense
 				? [req.body.licenseSelect]
@@ -140,12 +145,25 @@ app.post('/pilot', async (req, res) => {
 					Phone_number: req.body.phone,
 					Age: req.body.age,
 					Gender: req.body.gender,
-					License_Type: req.body.licenseSelect,
+					// Total_Time: req.body.totalTime,
+					// Command_Time: req.body.commandTime,
+					// Time_in_Second_Command: req.body.secondTime,
+					// Single_Engine_Land: req.body.singleEngine,
+					// Multi_Engine_Land: req.body.multiEngine,
+					// Jet_Time: req.body.jetTime,
+					// Turbine_Time: req.body.turbineTime,
+					// Total_Helicopter_Hours: req.body.heliHours,
+					// Total_Instructor_Hours: req.body.instructorHours,
+					License_Type: Array.isArray(req.body.licenseSelect)
+						? req.body.licenseSelect
+						: [req.body.licenseSelect],
+					Aircraft_Type: Array.isArray(req.body.aircraftSelect)
+						? req.body.aircraftSelect
+						: [req.body.aircraftSelect],
 					Nationality: req.body.nationality,
 					Country_of_residence: req.body.residence,
 					Valid_licence: req.body.validLicense,
 					Visas: req.body.visa,
-					Aircraft_Type: req.body.aircraftSelect,
 					Country_ICAO: req.body.icaoInput,
 					FAA_Verification: faaResult
 						? [
@@ -172,8 +190,9 @@ app.post('/pilot', async (req, res) => {
 						: null,
 				},
 			};
-			await attendantsTable.create([airtableRecord]);
+			await pilotsTable.create([airtableRecord]);
 			res.send('Record created successfully');
+			console.log('It worked');
 		} catch (error) {
 			console.error(error);
 			res.status(500).send('Error creating record');
