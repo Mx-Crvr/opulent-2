@@ -139,7 +139,7 @@ function renderRecords(containerId, records) {
 
 			const recordDiv = document.createElement('div');
 			recordDiv.classList.add(
-				'w-1/2',
+				'w-full',
 				'bg-whiteBg',
 				'border',
 				'border-black',
