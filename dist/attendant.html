@@ -917,106 +917,91 @@
 						</div>
 						<!-- Valid license -->
 						<div
-							class="formInput flex flex-col gap-1"
+							class="validLicense formInput flex flex-col gap-1"
 							id="licenseContainer"
 						>
-							<p class="font-semibold text-sm">
-								Do you have a valid license?
-							</p>
-							<p
-								class="text-red text-xs italic hidden"
-								id="yesNoMessage"
-							>
-								Please tick Yes or No
-							</p>
-							<div class="checkbox flex items-center gap-1">
-								<input
-									type="checkbox"
-									name="validLicense"
-									id="validLicense"
-									class="w-3 h-3 cursor-pointer"
-									value="true"
-								/>
-								<label
-									for="validLicense"
-									class="cursor-pointer text-sm"
-									>Yes</label
-								>
-							</div>
-							<!-- Shows if valid license is yes -->
 							<div
-								class="licenseSelectcontainer mt-2 hidden"
+								class="licenseSelectcontainer mt-2"
 								id="licenseSelectContainer"
 							>
 								<p class="font-semibold text-sm">
 									Select all your relevant licenses
 								</p>
-								<select
-									name="licenseSelect"
-									id="licenseSelect"
-									class="outline-none border border-black_half rounded-md p-2 outline-none focus:bg-redfocus cursor-pointer w-full"
-									size="5"
-									multiple
-								>
-									<option value="ICAO">ICAO</option>
-									<option value="FAA">FAA</option>
-									<option value="EASA">EASA</option>
-									<option value="UKCAA">UKCAA</option>
-									<option value="Other">Other</option>
-								</select>
+								<div class="input">
+									<input type="checkbox" name="ICAO" id="ICAO" class="w-3 h-3 cursor-pointer" value="ICAO">
+									<label for="ICAO" class="text-sm cursor-pointer">ICAO</label>
+									<!-- Shows if ICAO is selected -->
+									<div
+									class="flex flex-col gap-1 icaoInputContainer hidden"
+									id="icaoInputContainer"
+									>
+										<label
+											for="icaoInput"
+											class="font-semibold text-sm"
+											>Country for ICAO</label
+										>
+										<input
+											type="text"
+											id="icaoInput"
+											name="icaoInput"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+								</div>
+								<div class="input">
+									<input type="checkbox" name="FAA" id="FAA" class="w-3 h-3 cursor-pointer" value="FAA">
+									<label for="FAA" class="text-sm cursor-pointer">FAA</label>
+									<!-- Shows if FAA is selected -->
+									<div
+									class="flex flex-col gap-1 FAAInputContainer hidden"
+									id="FAAInputContainer"
+									>
+										<label
+											for="FAAInput"
+											class="font-semibold text-sm cursor-pointer"
+											>FAA Verification</label
+										>
+										<input
+											type="file"
+											id="FAAInput"
+											name="FAAInput"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+								</div>
+								<div class="input">
+									<input type="checkbox" name="EASA" id="EASA" class="w-3 h-3 cursor-pointer" value="EASA">
+									<label for="EASA" class="text-sm cursor-pointer">EASA</label>
+								</div>
+								<div class="input">
+									<input type="checkbox" name="UKCAA" id="UKCAA" class="w-3 h-3 cursor-pointer" value="UKCAA">
+									<label for="UKCAA" class="text-sm cursor-pointer">UKCAA</label>
+								</div>
+								<div class="input">
+									<input type="checkbox" name="Other" id="otherLicense" class="w-3 h-3 cursor-pointer" value="otherLicense">
+									<label for="Other" class="text-sm cursor-pointer">Other</label>
+									<!-- Shows if Other is selected -->
+									<div
+									class="flex flex-col gap-1hidden"
+									id="otherLicenseInputContainer"
+									>
+										<label
+											for="otherLicense"
+											class="font-semibold text-sm cursor-pointer"
+											>Other</label
+										>
+										<input
+											type="text"
+											id="otherLicenseInput"
+											name="otherLicense"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+								</div>
 							</div>
-							<!-- Shows if ICAO is selected -->
-							<div
-								class="flex flex-col gap-1 icaoInputContainer hidden"
-								id="icaoInputContainer"
-							>
-								<label
-									for="icaoInput"
-									class="font-semibold text-sm"
-									>Country for ICAO</label
-								>
-								<input
-									type="text"
-									id="icaoInput"
-									name="icaoInput"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<!-- Shows if FAA is selected -->
-							<div
-								class="flex flex-col gap-1 FAAInputContainer hidden"
-								id="FAAInputContainer"
-							>
-								<label
-									for="FAAInput"
-									class="font-semibold text-sm cursor-pointer"
-									>FAA Verification</label
-								>
-								<input
-									type="file"
-									id="FAAInput"
-									name="FAAInput"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
+							
 
-							<div
-								class="checkbox flex items-center gap-1"
-								id="invalidLicenseContainer"
-							>
-								<input
-									type="checkbox"
-									name="invalidLicense"
-									id="invalidLicense"
-									class="w-3 h-3 cursor-pointer"
-									value="true"
-								/>
-								<label
-									for="invalidLicense"
-									class="text-sm cursor-pointer"
-									>No</label
-								>
-							</div>
+
 						</div>
 						<!-- Aircraft types -->
 						<div class="formInput flex flex-col gap-1">

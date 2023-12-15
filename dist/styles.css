@@ -1419,10 +1419,6 @@ button:focus {
     width: 33.333333%;
   }
 
-  .lg\:w-3\/6 {
-    width: 50%;
-  }
-
   .lg\:w-full {
     width: 100%;
   }
