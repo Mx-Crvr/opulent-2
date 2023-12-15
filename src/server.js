@@ -15,10 +15,8 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
-app.use(
-	'/dist',
-	express.static(path.join(__dirname, '../dist', '../dist/styles.css'))
-);
+app.use('/dist', express.static(path.join(__dirname, '../dist/imgs')));
+// app.use('/dist', express.static(path.join(__dirname, '../dist/styles.css')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -199,10 +197,8 @@ app.post('/pilot', async (req, res) => {
 				},
 			};
 			await pilotsTable.create([airtableRecord]);
-			res.send(
-				'Thank you for your application. We will be in touch soon'
-			);
-			// res.sendFile(path.join(__dirname, '../dist/styles.css'));
+
+			res.sendFile(path.join(__dirname, '../dist/styles.css'));
 			console.log('It worked');
 		} catch (error) {
 			console.error(error);
