@@ -53,10 +53,6 @@ app.post('/attendant', async (req, res) => {
 			}
 			console.log(req.body);
 
-			const hasValidLicense = req.body.validLicense === 'true';
-			const licenseType = hasValidLicense
-				? [req.body.licenseSelect]
-				: null;
 			const faaResult = req.files['FAAInput']
 				? await uploadToCloudinary(req.files['FAAInput'][0])
 				: null;
@@ -80,11 +76,17 @@ app.post('/attendant', async (req, res) => {
 					FAA_License: req.body.FAA,
 					EASA_License: req.body.EASA,
 					UKCAA_License: req.body.UKCAA,
-					VIP_Experience: req.body.vipExperience,
+					Censna: req.body.Censna,
+					Beechcraft: req.body.Beechcraft,
+					ATR: req.body.ATR,
+					Embrear: req.body.Embrear,
+					Legacy: req.body.Legacy,
+					Bombardier: req.body.Bombardier,
+					Bombardier_Challenger: req.body.BombardierChallenger,
+					Gulfstream: req.body.Gulfstream,
+					Dassault: req.body.Dassault,
+					Dassault_Felcon: req.body.DassaultFelcon,
 					Visas: req.body.visa,
-					Aircraft_Type: Array.isArray(req.body.aircraftSelect)
-						? req.body.aircraftSelect
-						: [req.body.aircraftSelect],
 					Country_ICAO: req.body.icaoInput,
 					FAA_Verification: faaResult
 						? [
@@ -93,6 +95,7 @@ app.post('/attendant', async (req, res) => {
 								},
 						  ]
 						: null,
+					VIP_Experience: req.body.vipExperience,
 					Permanent: req.body.permanent,
 					Freelance: req.body.freelance,
 					Photo_upload: photoResult
@@ -161,12 +164,18 @@ app.post('/pilot', async (req, res) => {
 					FAA_License: req.body.FAA,
 					EASA_License: req.body.EASA,
 					UKCAA_License: req.body.UKCAA,
-					Aircraft_Type: Array.isArray(req.body.aircraftSelect)
-						? req.body.aircraftSelect
-						: [req.body.aircraftSelect],
+					Censna: req.body.Censna,
+					Beechcraft: req.body.Beechcraft,
+					ATR: req.body.ATR,
+					Embrear: req.body.Embrear,
+					Legacy: req.body.Legacy,
+					Bombardier: req.body.Bombardier,
+					Bombardier_Challenger: req.body.BombardierChallenger,
+					Gulfstream: req.body.Gulfstream,
+					Dassault: req.body.Dassault,
+					Dassault_Felcon: req.body.DassaultFelcon,
 					Nationality: req.body.nationality,
 					Country_of_residence: req.body.residence,
-					Valid_licence: req.body.validLicense,
 					Visas: req.body.visa,
 					Country_ICAO: req.body.icaoInput,
 					FAA_Verification: faaResult
