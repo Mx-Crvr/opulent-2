@@ -2,154 +2,138 @@
 @tailwind components;
 @tailwind utilities;
 
-.license_yes {
-  margin-bottom: 10px;
-  margin-top: 10px;
-  font-family: cursive, sans-serif;
-  outline: 0;
-  background: #2ecc71;
-  color: #fff;
-  border: 1px solid crimson;
-  padding: 4px;
-  border-radius: 9px;
-}
-
 #navbar {
-  box-shadow: 0.1px 0.75px 8px #00000094;
+	box-shadow: 0.1px 0.75px 8px #00000094;
 }
 
 .unanswered {
-  border: 1px solid red;
+	border: 1px solid red;
 }
 
 #landingpage {
-  height: 100vh;
-  box-shadow: 4000px 4000px inset #000000b4;
-  background-image: url('../dist/imgs/black_gulf.webp');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+	height: 100vh;
+	box-shadow: 4000px 4000px inset #000000b4;
+	background-image: url('../dist/imgs/black_gulf.webp');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 #h1 {
-  line-height: 1.4;
-  text-shadow: -12px 8px 24px #000;
+	line-height: 1.4;
+	text-shadow: -12px 8px 24px #000;
 }
 
-
-.reveal{
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
+.reveal {
+	position: relative;
+	transform: translateY(150px);
+	opacity: 0;
+	transition: 1s all ease;
 }
-.reveal.active{
-  transform: translateY(0);
-  opacity: 1;
+.reveal.active {
+	transform: translateY(0);
+	opacity: 1;
 }
 
 input::placeholder {
-  color: #31313959;
+	color: #31313959;
 }
 
-input[type=date]:invalid::-webkit-datetime-edit {
-  color: #31313959;
+input[type='date']:invalid::-webkit-datetime-edit {
+	color: #31313959;
 }
 
-option[value=""] {
-  color: #31313959;
+option[value=''] {
+	color: #31313959;
 }
-
-
 
 nav {
-  transition: all 0.8s ease-in-out;
-  background-color: #313139af;
+	transition: all 0.8s ease-in-out;
+	background-color: #313139af;
 }
 
 .main-heading {
-  animation: textUp 2s ease-in 1;
+	animation: textUp 2s ease-in 1;
 }
 
 @keyframes textUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+	0% {
+		opacity: 0;
+		transform: translateY(20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
 }
 
 .ac .ac-trigger {
-  text-align: left;
-  width: 100%;
-  padding: 8px 32px 8px 8px;
-  display: block;
-  cursor: pointer;
-  background-color: transparent;
-  transition: color 0.25s ease;
-  position: relative;
-  text-decoration: none;
-  margin: 0;
-  border: 0;
+	text-align: left;
+	width: 100%;
+	padding: 8px 32px 8px 8px;
+	display: block;
+	cursor: pointer;
+	background-color: transparent;
+	transition: color 0.25s ease;
+	position: relative;
+	text-decoration: none;
+	margin: 0;
+	border: 0;
 }
 .ac .ac-trigger::after {
-  content: "+";
-  text-align: center;
-  width: 15px;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  color: #C9003C;
+	content: '+';
+	text-align: center;
+	width: 15px;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	color: #c9003c;
 }
 .ac .ac-panel {
-  overflow: hidden;
-  transition-property: height, visibility;
-  transition-timing-function: ease;
+	overflow: hidden;
+	transition-property: height, visibility;
+	transition-timing-function: ease;
 }
 .ac .ac-panel .ac-text {
-  font: 15px/24px "Arial", sans-serif;
-  color: #313139;
-  padding: 8px;
-  margin: 0;
+	font: 15px/24px 'Arial', sans-serif;
+	color: #313139;
+	padding: 8px;
+	margin: 0;
 }
 .ac.js-enabled .ac-panel {
-  visibility: hidden;
+	visibility: hidden;
 }
 .ac.is-active .ac-panel {
-  visibility: visible;
+	visibility: visible;
 }
 .ac.is-active > .ac-header .ac-trigger::after {
-  content: "–";
-  color: #C9003C;
+	content: '–';
+	color: #c9003c;
 }
-
 
 button:focus {
-  background-color: #000;
-} 
-
-.button-container {
-  position: relative;
-  display: inline-block;
-  border-radius: 10px;
+	background-color: #000;
 }
 
-.button-container input[type="file"] {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  top: 0;
-  right: 0;
-  opacity: 0;
+.button-container {
+	position: relative;
+	display: inline-block;
+	border-radius: 10px;
+}
+
+.button-container input[type='file'] {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	opacity: 0;
 }

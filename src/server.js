@@ -16,6 +16,8 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
 app.use('/dist', express.static(path.join(__dirname, '../dist/imgs')));
+app.use('/dist', express.static(path.join(__dirname, '../dist/styles.css')));
+app.use('/dist', express.static(path.join(__dirname, '../dist/scripts')));
 // app.use('/dist', express.static(path.join(__dirname, '../dist/styles.css')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -49,7 +51,7 @@ app.post('/attendant', async (req, res) => {
 				console.error(err);
 				return res.status(500).send('Error uploading file');
 			}
-			console.log(req.body.licenseSelect);
+			console.log(req.body);
 
 			const hasValidLicense = req.body.validLicense === 'true';
 			const licenseType = hasValidLicense
@@ -72,14 +74,13 @@ app.post('/attendant', async (req, res) => {
 					Phone_number: req.body.phone,
 					Age: req.body.age,
 					Gender: req.body.gender,
-					License_Type: Array.isArray(req.body.licenseSelect)
-						? req.body.licenseSelect
-						: [req.body.licenseSelect],
 					Nationality: req.body.nationality,
-
 					Country_of_residence: req.body.residence,
+					ICAO_License: req.body.ICAO,
+					FAA_License: req.body.FAA,
+					EASA_License: req.body.EASA,
+					UKCAA_License: req.body.UKCAA,
 					VIP_Experience: req.body.vipExperience,
-					Valid_licence: req.body.validLicense,
 					Visas: req.body.visa,
 					Aircraft_Type: Array.isArray(req.body.aircraftSelect)
 						? req.body.aircraftSelect
@@ -116,7 +117,7 @@ app.post('/attendant', async (req, res) => {
 			);
 		} catch (error) {
 			console.error(error);
-			res.status(500).send('Error creating record');
+			res.send('Something went wrong. Please try again later');
 		}
 	});
 });
@@ -129,11 +130,7 @@ app.post('/pilot', async (req, res) => {
 				console.error(err);
 				return res.status(500).send('Error uploading file');
 			}
-			console.log(req.body.licenseSelect);
-			const hasValidLicense = req.body.validLicense === 'true';
-			const licenseType = hasValidLicense
-				? [req.body.licenseSelect]
-				: null;
+			console.log(req.body);
 			const faaResult = req.files['FAAInput']
 				? await uploadToCloudinary(req.files['FAAInput'][0])
 				: null;
@@ -160,9 +157,10 @@ app.post('/pilot', async (req, res) => {
 					Turbine_Time: req.body.turbineTime,
 					Total_Helicopter_Hours: req.body.heliHours,
 					Total_Instructor_Hours: req.body.instructorHours,
-					License_Type: Array.isArray(req.body.licenseSelect)
-						? req.body.licenseSelect
-						: [req.body.licenseSelect],
+					ICAO_License: req.body.ICAO,
+					FAA_License: req.body.FAA,
+					EASA_License: req.body.EASA,
+					UKCAA_License: req.body.UKCAA,
 					Aircraft_Type: Array.isArray(req.body.aircraftSelect)
 						? req.body.aircraftSelect
 						: [req.body.aircraftSelect],
@@ -198,11 +196,13 @@ app.post('/pilot', async (req, res) => {
 			};
 			await pilotsTable.create([airtableRecord]);
 
-			res.sendFile(path.join(__dirname, '../dist/styles.css'));
+			res.send(
+				'Thank you for your application! We will be in touch soon'
+			);
 			console.log('It worked');
 		} catch (error) {
 			console.error(error);
-			res.status(500).send('Error creating record');
+			res.send('Something went wrong. Please try again later');
 		}
 	});
 });
