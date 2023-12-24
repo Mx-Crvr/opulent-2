@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Opulent Air Crew | Attendant Application</title>
+		<title>Opulent Air Crew | Flight Attendants</title>
+		<link rel="icon" href="./imgs/logo.webp" type="image/x-icon" />
 		<link rel="stylesheet" href="./styles.css" />
 		<script src="./scripts/animation.js" defer></script>
 		<script src="./scripts/application.js" defer></script>
@@ -25,33 +26,25 @@
 				<div
 					class="nav-links items-center justify-between gap-12 hidden lg:flex"
 				>
-				<a
+					<a
 						href="/"
-						class="text-black font-semibold hover:text-redhover transition-color duration-200"
+						class="text-black font-medium hover:text-redhover transition-color duration-200"
 						>Home</a
 					>
 					<a
-						href="./database.html"
-						class="text-black font-semibold hover:text-redhover transition-color duration-200"
-						>Candidate Database</a
-					>
-					<a
 						href="./pilot.html"
-						class="text-black font-semibold hover:text-redhover transition-color duration-200"
+						class="text-black font-medium hover:text-redhover transition-color duration-200"
 						>Pilots</a
 					>
-					<a href="#" class="text-gray font-semibold underline"
+					<a href="#" class="text-gray font-medium underline"
 						>Flight Attendants</a
 					>
-					<a href="#" class="text-black font-semibold hover:text-redhover transition-color duration-200"
-					>Employers</a
-					>	
+					<a
+						href="./employers.html"
+						class="text-black font-medium hover:text-redhover transition-color duration-200"
+						>Employers</a
+					>
 				</div>
-				<a
-					href="./contact.html"
-					class="hidden lg:block text-black font-semibold hover:text-redhover transition-color duration-200"
-					>Contact</a
-				>
 				<!-- Mobile nav -->
 				<svg
 					width="28"
@@ -74,22 +67,16 @@
 					<button id="closeBtn" class="fixed right-4 top-4 text-3xl">
 						X
 					</button>
-					<a href="/" class="mobile-nav-link"
-						>Home</a
-					>
-					<a href="./database.html" class="mobile-nav-link"
-						>Candidate Database</a
-					>
+					<a href="/" class="mobile-nav-link">Home</a>
 					<a href="./attendant.html" class="mobile-nav-link"
 						>Attendants</a
 					>
 					<a href="./pilot.html" class="mobile-nav-link">Pilots</a>
 					<a
-						href="#"
+						href="./employers.html"
 						class="text-black font-semibold hover:text-redhover transition-color duration-200"
 						>Employers</a
 					>
-					<a href="./contact.html" class="mobile-nav-link">Contact</a>
 				</div>
 			</nav>
 		</header>
@@ -142,7 +129,6 @@
 								become part of our database to be considered for
 								the latest job opportunities.
 							</p>
-							
 						</div>
 					</div>
 					<div class="img w-full lg:w-1/2">
@@ -928,12 +914,22 @@
 									Select all your relevant licenses
 								</p>
 								<div class="input">
-									<input type="checkbox" name="ICAO" id="ICAO" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="ICAO" class="text-sm cursor-pointer">ICAO</label>
+									<input
+										type="checkbox"
+										name="ICAO"
+										id="ICAO"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="ICAO"
+										class="text-sm cursor-pointer"
+										>ICAO</label
+									>
 									<!-- Shows if ICAO is selected -->
 									<div
-									class="flex flex-col gap-1 icaoInputContainer hidden"
-									id="icaoInputContainer"
+										class="flex flex-col gap-1 icaoInputContainer hidden"
+										id="icaoInputContainer"
 									>
 										<label
 											for="icaoInput"
@@ -949,12 +945,22 @@
 									</div>
 								</div>
 								<div class="input">
-									<input type="checkbox" name="FAA" id="FAA" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="FAA" class="text-sm cursor-pointer">FAA</label>
+									<input
+										type="checkbox"
+										name="FAA"
+										id="FAA"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="FAA"
+										class="text-sm cursor-pointer"
+										>FAA</label
+									>
 									<!-- Shows if FAA is selected -->
 									<div
-									class="flex flex-col gap-1 FAAInputContainer hidden"
-									id="FAAInputContainer"
+										class="flex flex-col gap-1 FAAInputContainer hidden"
+										id="FAAInputContainer"
 									>
 										<label
 											for="FAAInput"
@@ -970,20 +976,50 @@
 									</div>
 								</div>
 								<div class="input">
-									<input type="checkbox" name="EASA" id="EASA" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="EASA" class="text-sm cursor-pointer">EASA</label>
+									<input
+										type="checkbox"
+										name="EASA"
+										id="EASA"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="EASA"
+										class="text-sm cursor-pointer"
+										>EASA</label
+									>
 								</div>
 								<div class="input">
-									<input type="checkbox" name="UKCAA" id="UKCAA" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="UKCAA" class="text-sm cursor-pointer">UKCAA</label>
+									<input
+										type="checkbox"
+										name="UKCAA"
+										id="UKCAA"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="UKCAA"
+										class="text-sm cursor-pointer"
+										>UKCAA</label
+									>
 								</div>
 								<div class="input">
-									<input type="checkbox" name="Other" id="otherLicense" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Other" class="text-sm cursor-pointer">Other</label>
+									<input
+										type="checkbox"
+										name="Other"
+										id="otherLicense"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Other"
+										class="text-sm cursor-pointer"
+										>Other</label
+									>
 									<!-- Shows if Other is selected -->
 									<div
-									class="flex flex-col gap-1hidden"
-									id="otherLicenseInputContainer"
+										class="flex flex-col gap-1hidden"
+										id="otherLicenseInputContainer"
 									>
 										<label
 											for="otherLicense"
@@ -1012,44 +1048,144 @@
 								id="aircraftContainer"
 							>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="Censna" id="Censna" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Censna" class="text-sm cursor-pointer">Censna</label>
+									<input
+										type="checkbox"
+										name="Censna"
+										id="Censna"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Censna"
+										class="text-sm cursor-pointer"
+										>Censna</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="Beechcraft" id="Beechcraft" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Beechcraft" class="text-sm cursor-pointer">Beechcraft</label>
+									<input
+										type="checkbox"
+										name="Beechcraft"
+										id="Beechcraft"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Beechcraft"
+										class="text-sm cursor-pointer"
+										>Beechcraft</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="ATR" id="ATR" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="ATR" class="text-sm cursor-pointer">ATR</label>
+									<input
+										type="checkbox"
+										name="ATR"
+										id="ATR"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="ATR"
+										class="text-sm cursor-pointer"
+										>ATR</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="Embrear" id="Embrear" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Embrear" class="text-sm cursor-pointer">Embrear</label>
+									<input
+										type="checkbox"
+										name="Embrear"
+										id="Embrear"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Embrear"
+										class="text-sm cursor-pointer"
+										>Embrear</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="Legacy" id="Legacy" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Legacy" class="text-sm cursor-pointer">Legacy</label>
+									<input
+										type="checkbox"
+										name="Legacy"
+										id="Legacy"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Legacy"
+										class="text-sm cursor-pointer"
+										>Legacy</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="Bombardier" id="Bombardier" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Bombardier" class="text-sm cursor-pointer">Bombardier</label>
+									<input
+										type="checkbox"
+										name="Bombardier"
+										id="Bombardier"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Bombardier"
+										class="text-sm cursor-pointer"
+										>Bombardier</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="BombardierChallenger" id="BombardierChallenger" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="BombardierChallenger" class="text-sm cursor-pointer">Bombardier Challenger</label>
+									<input
+										type="checkbox"
+										name="BombardierChallenger"
+										id="BombardierChallenger"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="BombardierChallenger"
+										class="text-sm cursor-pointer"
+										>Bombardier Challenger</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="GulfStream" id="GulfStream" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Gulfstream" class="text-sm cursor-pointer">Gulfstream</label>
+									<input
+										type="checkbox"
+										name="GulfStream"
+										id="GulfStream"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Gulfstream"
+										class="text-sm cursor-pointer"
+										>Gulfstream</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="Dassault" id="Dassault" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="Dassault" class="text-sm cursor-pointer">Dassault</label>
+									<input
+										type="checkbox"
+										name="Dassault"
+										id="Dassault"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="Dassault"
+										class="text-sm cursor-pointer"
+										>Dassault</label
+									>
 								</div>
 								<div class="input flex items-center gap-1">
-									<input type="checkbox" name="DassaultFelcon" id="DassaultFelcon" class="w-3 h-3 cursor-pointer" value="true">
-									<label for="DassaultFelcon" class="text-sm cursor-pointer">Dassault Felcon</label>
+									<input
+										type="checkbox"
+										name="DassaultFelcon"
+										id="DassaultFelcon"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="DassaultFelcon"
+										class="text-sm cursor-pointer"
+										>Dassault Felcon</label
+									>
 								</div>
 							</div>
 						</div>
@@ -1203,15 +1339,73 @@
 		</main>
 
 		<footer
-			class="px-4 py-4 md:px-16 lg:px-24 bg-pureblack flex justify-center items-center flex-col text-white"
+			class="px-4 md:px-16 lg:px-24 pt-12 bg-pureblack reveal flex flex-col gap-12"
 		>
+			<div class="flex flex-col justify-center items-center gap-5">
+				<div class="socials flex items-center justify-center gap-8">
+					<!-- Facebook -->
+					<a
+						href="https://www.facebook.com/profile.php?id=61554746318491&mibextid=ZbWKwL"
+						target="_blank"
+					>
+						<svg
+							width="32"
+							height="32"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							class="cursor-pointer"
+						>
+							<g clip-path="url(#clip0_1459_241921)">
+								<path
+									d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z"
+									fill="white"
+								/>
+							</g>
+							<defs>
+								<clipPath id="clip0_1459_241921">
+									<rect width="24" height="24" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+					<!-- LinkedIn -->
+					<a
+						href="https://www.linkedin.com/company/opulentaircrew"
+						target="_blank"
+					>
+						<svg
+							width="32"
+							height="32"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							class="cursor-pointer"
+						>
+							<g clip-path="url(#clip0_1459_241918)">
+								<path
+									d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5563 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2938 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516V20.4516Z"
+									fill="white"
+								/>
+							</g>
+							<defs>
+								<clipPath id="clip0_1459_241918">
+									<rect width="24" height="24" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+				</div>
+			</div>
 			<div
+				class="credits flex flex-col items-center justify-center gap-2 text-white pb-2 md:pb-6 lg:pb-8 font-thin"
 			>
 				<p>&copy; 2023 OpulentAirCrew. All rights reserved</p>
-				<p class="text-xs text-center">
+				<p class="text-xs">
 					Developed and maintained by
-					<span class="italic">GinjiTech</span>
+					<span class="italic">Ginji</span>
 				</p>
+			</div>
 		</footer>
 	</body>
 </html>

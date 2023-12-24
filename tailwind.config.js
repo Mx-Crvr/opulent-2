@@ -3,8 +3,8 @@ module.exports = {
 	content: [
 		'./dist/*.{html,js}',
 		'./dist/scripts/*.js',
-		'*.{html,js}',
-		'./dist/thankyou.html',
+		'*./{html,js}',
+		'index.html',
 	],
 	theme: {
 		fontFamily: {
