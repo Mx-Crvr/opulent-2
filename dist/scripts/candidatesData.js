@@ -223,6 +223,8 @@ window.addEventListener('DOMContentLoaded', () => {
 			if (data && typeof data === 'object') {
 				attendantRecords = data.attendants || [];
 				pilotRecords = data.pilots || [];
+				attendantRecords = data.attendants || [];
+				pilotRecords = data.pilots || [];
 				renderRecords('pilots-container', data.pilots || []);
 				renderRecords('attendants-container', data.attendants || []);
 			} else {
