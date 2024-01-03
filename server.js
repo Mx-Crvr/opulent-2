@@ -332,6 +332,7 @@ app.get('/operatorData', async (req, res) => {
 		};
 		res.sendFile(path.join(__dirname, '../dist/operator.html'));
 		res.end(JSON.stringify(allRecords));
+		console.log(pilotRecords);
 	} catch (error) {
 		console.error(error);
 		res.status(500).send('Error fetching records');
