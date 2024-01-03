@@ -102,20 +102,6 @@ function renderRecords(containerId, records) {
 				'justify-between'
 			);
 			recordDiv.appendChild(rowFive);
-			// Get aircraft types
-			const aircraftTypes = document.createElement('p');
-			const aircrafts = record.fields.Aircraft_Type;
-			const aircraftTypesText = Array.isArray(aircrafts)
-				? aircrafts
-						.map(
-							(aircraft) => `<li class="text-sm">${aircraft}</li>`
-						)
-						.join('')
-				: '';
-
-			aircraftTypes.innerHTML = `<span class="font-semibold text-lg">Aircraft Type(s):</span> ${aircraftTypesText}`;
-
-			rowFive.appendChild(aircraftTypes);
 
 			container.appendChild(recordDiv);
 		});
@@ -218,19 +204,6 @@ function renderRecords(containerId, records) {
 				'justify-between'
 			);
 			recordDiv.appendChild(rowFive);
-			// Get aircraft types
-			const aircraftTypes = document.createElement('p');
-			const aircrafts = record.fields.Aircraft_Type;
-			const aircraftTypesText = Array.isArray(aircrafts)
-				? aircrafts
-						.map(
-							(aircraft) => `<li class="text-sm">${aircraft}</li>`
-						)
-						.join('')
-				: '';
-			aircraftTypes.innerHTML = `<span class="font-semibold text-lg">Aircraft Type(s):</span> ${aircraftTypesText}`;
-
-			rowFive.appendChild(aircraftTypes);
 
 			container.appendChild(recordDiv);
 		});
