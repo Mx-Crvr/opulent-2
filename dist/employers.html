@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Pilot Application</title>
+		<title>Opulent Air Crew | Employers</title>
 		<link rel="icon" href="./imgs/logo.webp" type="image/x-icon" />
-		<link rel="stylesheet" type="text/css" href="./styles.css" />
+		<link rel="stylesheet" href="./styles.css" />
 		<script src="./scripts/animation.js" defer></script>
 		<script src="./scripts/application.js" defer></script>
-		<script src="./scripts/form.js" defer></script>
+		<script src="./scripts/employers.js" defer></script>
 	</head>
 	<body class="font-poppins font-light">
 		<header>
@@ -31,7 +31,9 @@
 						class="text-black font-medium hover:text-redhover transition-color duration-200"
 						>Home</a
 					>
-					<a href="#" class="text-gray font-medium underline"
+					<a
+						href="./pilot.html"
+						class="text-black font-medium hover:text-redhover transition-color duration-200"
 						>Pilots</a
 					>
 					<a
@@ -39,12 +41,11 @@
 						class="text-black font-medium hover:text-redhover transition-color duration-200"
 						>Flight Attendants</a
 					>
-					<a
-						href="./employers.html"
-						class="text-black font-medium hover:text-redhover transition-color duration-200"
+					<a href="#" class="text-gray font-medium underline"
 						>Employers</a
 					>
 				</div>
+
 				<!-- Mobile nav -->
 				<svg
 					width="28"
@@ -67,52 +68,70 @@
 					<button id="closeBtn" class="fixed right-4 top-4 text-3xl">
 						X
 					</button>
+					<a href="/" class="mobile-nav-link">Home</a>
+
 					<a href="./attendant.html" class="mobile-nav-link"
 						>Attendants</a
 					>
-					<a href="#" class="mobile-nav-link">Pilots</a>
-					<a href="./employers.html" class="mobile-nav-link"
+					<a href="./pilot.html" class="mobile-nav-link">Pilots</a>
+					<a
+						href="#"
+						class="text-black font-semibold hover:text-redhover transition-color duration-200"
 						>Employers</a
 					>
 				</div>
 			</nav>
 		</header>
-
 		<main id="main" class="py-12 sm:py-24 md:py-24 lg:py-24">
 			<div
 				id="hero_section"
 				class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24"
 			>
 				<h1
-					class="text-2xl md:text-3xl lg:text-5xl font-semibold text-center text-[#000] mb-4 sm:mb-12 md:mb-16 lg:mb-24"
+					class="text-2xl md:text-3xl lg:text-5xl font-semibold text-center text-[#000] mb-8 sm:mb-12 md:mb-16 lg:mb-24"
 				>
-					Pilots
+					Employers
 				</h1>
 				<div
 					class="flex lg:flex-row flex-col items-stretch justify-between gap-12"
 				>
 					<div
-						class="text flex flex-col items-stretch justify-center gap-5 w-full lg:w-1/2"
+						class="text flex flex-col items-stretch justify-start gap-5 w-full lg:w-1/2"
 					>
 						<h2 class="font-semibold text-xl lg:text-2xl">
-							Your path to the perfect assignment
+							Tailored Excellence
 						</h2>
 						<p class="font-regular leading-7 text-md lg:text-lg">
-							At OpulentAirCrew we understand the hurdles that
-							Pilots face within the aviation industry, therefore
-							it’s our key objective to match you with the perfect
-							full-time, part-time or temporary assignment. We
-							trust you’ll find our recruitment process fast and
-							easy-to-use, and we look forward to receiving your
-							application form to start your aviation journey with
-							us.
+							At Opulentaircrew we understand that every aircraft
+							and owner has specific needs and requirements,
+							therefore our key focus is to ensure that our staff
+							are a perfect fit for their aviation placements.
+							Through this attention to detail, we've created a
+							service that keeps both our clients and our crew
+							satisfied and comfortable.
+
 							<br />
 							<br />
+							We are very aware that reputation goes a long way,
+							so we pride ourselves in our business conduct and
+							are confident in the candidates we endorse. We
+							strive to go above and beyond, ensuring that through
+							us employers have access to a multitude of quality
+							candidates across the aviation industry We also
+							offer additional services such as handling VIP jet
+							Cabin outfitting and support, keeping all your
+							personal requirements in mind and leaving no detail
+							unattended.
 						</p>
+						<a
+							href="./database.html"
+							class="w-3/4 lg:w-2/6 mt-4 lg:mt-6 bg-red text-white p-2 rounded-lg text-center hover:bg-redhover transition-all"
+							>Candidate database</a
+						>
 					</div>
 					<div class="img w-full lg:w-1/2">
 						<img
-							src="./imgs/pilot_hero.webp"
+							src="./imgs/employer.webp"
 							alt="Cabin"
 							class="rounded-lg w-full"
 						/>
@@ -120,24 +139,39 @@
 				</div>
 			</div>
 
-			<div class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24">
+			<div
+				id="employer"
+				class="px-4 md:px-16 lg:px-24 pt-16 md:pt-20 lg:pt-24 reveal"
+			>
 				<div
-					class="flex flex-col items-stretch justify-center bg-slate-200 border border-slate-300 shadow-lg rounded-lg p-2 sm:p-4 md:p-6 lg:p-8 w-full lg:w-2/3 mx-auto"
+					class="flex flex-col items-stretch justify-center bg-slate-200 border border-slate-300 shadow-lg rounded-lg p-2 sm:p-4 md:p-6 lg:p-8 mx-auto w-full lg:w-2/3"
 				>
 					<h3
 						class="font-semibold text-lg lg:text-xl text-center mb-2"
 					>
-						Pilot Application Form
+						Employers Application Form
 					</h3>
 					<form
-						action="/pilot"
-						method="post"
-						id="pilotForm"
+						action="/employer"
+						method="POST"
+						id="employerForm"
 						class="form flex flex-col gap-3 sm:gap-3 md:gap-4 lg:gap-5"
 						enctype="multipart/form-data"
 					>
+						<!-- Company name -->
+						<div class="formInput flex flex-col gap-1">
+							<label for="cname" class="font-semibold text-sm"
+								>Company Name</label
+							>
+							<input
+								type="text"
+								name="cname"
+								id="cname"
+								class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+							/>
+						</div>
 						<!-- First name -->
-						<div class="fname formInput flex flex-col gap-1">
+						<div class="formInput flex flex-col gap-1">
 							<label for="fname" class="font-semibold text-sm"
 								>First Name</label
 							>
@@ -149,7 +183,7 @@
 							/>
 						</div>
 						<!-- Last name -->
-						<div class="fname formInput flex flex-col gap-1">
+						<div class="formInput flex flex-col gap-1">
 							<label for="lname" class="font-semibold text-sm"
 								>Last Name</label
 							>
@@ -161,7 +195,7 @@
 							/>
 						</div>
 						<!-- Email address -->
-						<div class="email formInput flex flex-col gap-1">
+						<div class="formInput flex flex-col gap-1">
 							<label for="email" class="font-semibold text-sm"
 								>Email Address</label
 							>
@@ -173,7 +207,7 @@
 							/>
 						</div>
 						<!-- Phone number -->
-						<div class="phone formInput flex flex-col gap-1">
+						<div class="formInput flex flex-col gap-1">
 							<label for="phone" class="font-semibold text-sm"
 								>Phone Number</label
 							>
@@ -184,293 +218,14 @@
 								class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
 							/>
 						</div>
-						<!-- Age -->
-						<div class="age formInput flex flex-col gap-1">
-							<label for="age" class="font-semibold text-sm"
-								>Age</label
-							>
-							<input
-								type="number"
-								name="age"
-								id="age"
-								class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-							/>
-						</div>
-						<!-- Gender -->
-						<div class="gender formInput flex flex-col gap-1">
-							<label for="gender" class="font-semibold text-sm"
-								>Gender</label
+						<!-- Country -->
+						<div class="formInput flex flex-col gap-1">
+							<label for="country" class="font-semibold text-sm"
+								>Country</label
 							>
 							<select
-								name="gender"
-								id="gender"
-								class="outline-none border border-black_half rounded-md p-2 outline-none focus:bg-redfocus cursor-pointer"
-							>
-								<option value="" disabled selected hidden>
-									Select gender
-								</option>
-								<option value="Female">Female</option>
-								<option value="Male">Male</option>
-								<option value="Null">Prefer not to say</option>
-							</select>
-						</div>
-						<!-- Nationality -->
-						<div class="nationality formInput flex flex-col gap-1">
-							<label
-								for="nationality"
-								class="font-semibold text-sm"
-								>Nationality</label
-							>
-							<select
-								name="nationality"
-								id="nationality"
-								class="outline-none border border-black_half rounded-md p-2 outline-none focus:bg-redfocus cursor-pointer"
-							>
-								<option value="" disabled selected hidden>
-									Select nationality
-								</option>
-								<option value="Afghan">Afghan</option>
-								<option value="Albanian">Albanian</option>
-								<option value="Algerian">Algerian</option>
-								<option value="American">American</option>
-								<option value="Andorran">Andorran</option>
-								<option value="Angolan">Angolan</option>
-								<option value="Antiguans">Antiguans</option>
-								<option value="Argentinean">Argentinean</option>
-								<option value="Armenian">Armenian</option>
-								<option value="Australian">Australian</option>
-								<option value="Austrian">Austrian</option>
-								<option value="Azerbaijani">Azerbaijani</option>
-								<option value="Bahamian">Bahamian</option>
-								<option value="Bahraini">Bahraini</option>
-								<option value="Bangladeshi">Bangladeshi</option>
-								<option value="Barbadian">Barbadian</option>
-								<option value="Barbudans">Barbudans</option>
-								<option value="Batswana">Batswana</option>
-								<option value="Belarusian">Belarusian</option>
-								<option value="Belgian">Belgian</option>
-								<option value="Belizean">Belizean</option>
-								<option value="Beninese">Beninese</option>
-								<option value="Bhutanese">Bhutanese</option>
-								<option value="Bolivian">Bolivian</option>
-								<option value="Bosnian">Bosnian</option>
-								<option value="Brazilian">Brazilian</option>
-								<option value="British">British</option>
-								<option value="Bruneian">Bruneian</option>
-								<option value="Bulgarian">Bulgarian</option>
-								<option value="Burkinabe">Burkinabe</option>
-								<option value="Burmese">Burmese</option>
-								<option value="Burundian">Burundian</option>
-								<option value="Cambodian">Cambodian</option>
-								<option value="Cameroonian">Cameroonian</option>
-								<option value="Canadian">Canadian</option>
-								<option value="Cape verdean">
-									Cape Verdean
-								</option>
-								<option value="Central african">
-									Central African
-								</option>
-								<option value="Chadian">Chadian</option>
-								<option value="Chilean">Chilean</option>
-								<option value="Chinese">Chinese</option>
-								<option value="Colombian">Colombian</option>
-								<option value="Comoran">Comoran</option>
-								<option value="Congolese">Congolese</option>
-								<option value="Costa rican">Costa Rican</option>
-								<option value="Croatian">Croatian</option>
-								<option value="Cuban">Cuban</option>
-								<option value="Cypriot">Cypriot</option>
-								<option value="Czech">Czech</option>
-								<option value="Danish">Danish</option>
-								<option value="Djibouti">Djibouti</option>
-								<option value="Dominican">Dominican</option>
-								<option value="Dutch">Dutch</option>
-								<option value="East timorese">
-									East Timorese
-								</option>
-								<option value="Ecuadorean">Ecuadorean</option>
-								<option value="Egyptian">Egyptian</option>
-								<option value="Emirian">Emirian</option>
-								<option value="Equatorial guinean">
-									Equatorial Guinean
-								</option>
-								<option value="Eritrean">Eritrean</option>
-								<option value="Estonian">Estonian</option>
-								<option value="Ethiopian">Ethiopian</option>
-								<option value="Fijian">Fijian</option>
-								<option value="Filipino">Filipino</option>
-								<option value="Finnish">Finnish</option>
-								<option value="French">French</option>
-								<option value="Gabonese">Gabonese</option>
-								<option value="Gambian">Gambian</option>
-								<option value="Georgian">Georgian</option>
-								<option value="German">German</option>
-								<option value="Ghanaian">Ghanaian</option>
-								<option value="Greek">Greek</option>
-								<option value="Grenadian">Grenadian</option>
-								<option value="Guatemalan">Guatemalan</option>
-								<option value="Guinea-bissauan">
-									Guinea-Bissauan
-								</option>
-								<option value="Guinean">Guinean</option>
-								<option value="Guyanese">Guyanese</option>
-								<option value="Haitian">Haitian</option>
-								<option value="Herzegovinian">
-									Herzegovinian
-								</option>
-								<option value="Honduran">Honduran</option>
-								<option value="Hungarian">Hungarian</option>
-								<option value="Icelander">Icelander</option>
-								<option value="Indian">Indian</option>
-								<option value="Indonesian">Indonesian</option>
-								<option value="Iranian">Iranian</option>
-								<option value="Iraqi">Iraqi</option>
-								<option value="Irish">Irish</option>
-								<option value="Israeli">Israeli</option>
-								<option value="Italian">Italian</option>
-								<option value="Ivorian">Ivorian</option>
-								<option value="Jamaican">Jamaican</option>
-								<option value="Japanese">Japanese</option>
-								<option value="Jordanian">Jordanian</option>
-								<option value="Kazakhstani">Kazakhstani</option>
-								<option value="Kenyan">Kenyan</option>
-								<option value="Kittian and nevisian">
-									Kittian and Nevisian
-								</option>
-								<option value="Kuwaiti">Kuwaiti</option>
-								<option value="Kyrgyz">Kyrgyz</option>
-								<option value="Laotian">Laotian</option>
-								<option value="Latvian">Latvian</option>
-								<option value="Lebanese">Lebanese</option>
-								<option value="Liberian">Liberian</option>
-								<option value="Libyan">Libyan</option>
-								<option value="Liechtensteiner">
-									Liechtensteiner
-								</option>
-								<option value="Lithuanian">Lithuanian</option>
-								<option value="Luxembourger">
-									Luxembourger
-								</option>
-								<option value="Macedonian">Macedonian</option>
-								<option value="Malagasy">Malagasy</option>
-								<option value="Malawian">Malawian</option>
-								<option value="Malaysian">Malaysian</option>
-								<option value="Maldivan">Maldivan</option>
-								<option value="Malian">Malian</option>
-								<option value="Maltese">Maltese</option>
-								<option value="Marshallese">Marshallese</option>
-								<option value="Mauritanian">Mauritanian</option>
-								<option value="Mauritian">Mauritian</option>
-								<option value="Mexican">Mexican</option>
-								<option value="Micronesian">Micronesian</option>
-								<option value="Moldovan">Moldovan</option>
-								<option value="Monacan">Monacan</option>
-								<option value="Mongolian">Mongolian</option>
-								<option value="Moroccan">Moroccan</option>
-								<option value="Mosotho">Mosotho</option>
-								<option value="Motswana">Motswana</option>
-								<option value="Mozambican">Mozambican</option>
-								<option value="Namibian">Namibian</option>
-								<option value="Nauruan">Nauruan</option>
-								<option value="Nepalese">Nepalese</option>
-								<option value="New zealander">
-									New Zealander
-								</option>
-								<option value="Ni-vanuatu">Ni-Vanuatu</option>
-								<option value="Nicaraguan">Nicaraguan</option>
-								<option value="Nigerien">Nigerien</option>
-								<option value="North korean">
-									North Korean
-								</option>
-								<option value="Northern irish">
-									Northern Irish
-								</option>
-								<option value="Norwegian">Norwegian</option>
-								<option value="Omani">Omani</option>
-								<option value="Pakistani">Pakistani</option>
-								<option value="Palauan">Palauan</option>
-								<option value="Panamanian">Panamanian</option>
-								<option value="Papua new guinean">
-									Papua New Guinean
-								</option>
-								<option value="Paraguayan">Paraguayan</option>
-								<option value="Peruvian">Peruvian</option>
-								<option value="Polish">Polish</option>
-								<option value="Portuguese">Portuguese</option>
-								<option value="Qatari">Qatari</option>
-								<option value="Romanian">Romanian</option>
-								<option value="Russian">Russian</option>
-								<option value="Rwandan">Rwandan</option>
-								<option value="Saint lucian">
-									Saint Lucian
-								</option>
-								<option value="Salvadoran">Salvadoran</option>
-								<option value="Samoan">Samoan</option>
-								<option value="San marinese">
-									San Marinese
-								</option>
-								<option value="Sao tomean">Sao Tomean</option>
-								<option value="Saudi">Saudi</option>
-								<option value="Scottish">Scottish</option>
-								<option value="Senegalese">Senegalese</option>
-								<option value="Serbian">Serbian</option>
-								<option value="Seychellois">Seychellois</option>
-								<option value="Sierra leonean">
-									Sierra Leonean
-								</option>
-								<option value="Singaporean">Singaporean</option>
-								<option value="Slovakian">Slovakian</option>
-								<option value="Slovenian">Slovenian</option>
-								<option value="Solomon islander">
-									Solomon Islander
-								</option>
-								<option value="Somali">Somali</option>
-								<option value="South african">
-									South African
-								</option>
-								<option value="South korean">
-									South Korean
-								</option>
-								<option value="Spanish">Spanish</option>
-								<option value="Sri lankan">Sri Lankan</option>
-								<option value="Sudanese">Sudanese</option>
-								<option value="Surinamer">Surinamer</option>
-								<option value="Swazi">Swazi</option>
-								<option value="Swedish">Swedish</option>
-								<option value="Swiss">Swiss</option>
-								<option value="Syrian">Syrian</option>
-								<option value="Taiwanese">Taiwanese</option>
-								<option value="Tajik">Tajik</option>
-								<option value="Tanzanian">Tanzanian</option>
-								<option value="Thai">Thai</option>
-								<option value="Togolese">Togolese</option>
-								<option value="Tongan">Tongan</option>
-								<option value="Trinidadian or tobagonian">
-									Trinidadian or Tobagonian
-								</option>
-								<option value="Tunisian">Tunisian</option>
-								<option value="Turkish">Turkish</option>
-								<option value="Tuvaluan">Tuvaluan</option>
-								<option value="Ugandan">Ugandan</option>
-								<option value="Ukrainian">Ukrainian</option>
-								<option value="Uruguayan">Uruguayan</option>
-								<option value="Uzbekistani">Uzbekistani</option>
-								<option value="Venezuelan">Venezuelan</option>
-								<option value="Vietnamese">Vietnamese</option>
-								<option value="Welsh">Welsh</option>
-								<option value="Yemenite">Yemenite</option>
-								<option value="Zambian">Zambian</option>
-								<option value="Zimbabwean">Zimbabwean</option>
-							</select>
-						</div>
-						<!-- Residence -->
-						<div class="residence formInput flex flex-col gap-1">
-							<label for="residence" class="font-semibold text-sm"
-								>Country of residence</label
-							>
-							<select
-								name="residence"
-								id="residence"
+								name="country"
+								id="country"
 								class="outline-none border border-black_half rounded-md p-2 outline-none focus:bg-redfocus cursor-pointer"
 							>
 								<option value="" disabled selected hidden>
@@ -872,147 +627,13 @@
 								<option value="Zimbabwe">Zimbabwe</option>
 							</select>
 						</div>
-						<!-- Valid license -->
-						<div
-							class="validLicense formInput flex flex-col gap-1"
-							id="licenseContainer"
-						>
-							<div
-								class="licenseSelectcontainer mt-2"
-								id="licenseSelectContainer"
-							>
-								<p class="font-semibold text-sm">
-									Select all your relevant licenses
-								</p>
-								<div class="input">
-									<input
-										type="checkbox"
-										name="ICAO"
-										id="ICAO"
-										class="w-3 h-3 cursor-pointer"
-										value="true"
-									/>
-									<label
-										for="ICAO"
-										class="text-sm cursor-pointer"
-										>ICAO</label
-									>
-									<!-- Shows if ICAO is selected -->
-									<div
-										class="flex flex-col gap-1 icaoInputContainer hidden"
-										id="icaoInputContainer"
-									>
-										<label
-											for="icaoInput"
-											class="font-semibold text-sm"
-											>Country for ICAO</label
-										>
-										<input
-											type="text"
-											id="icaoInput"
-											name="icaoInput"
-											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-										/>
-									</div>
-								</div>
-								<div class="input">
-									<input
-										type="checkbox"
-										name="FAA"
-										id="FAA"
-										class="w-3 h-3 cursor-pointer"
-										value="true"
-									/>
-									<label
-										for="FAA"
-										class="text-sm cursor-pointer"
-										>FAA</label
-									>
-									<!-- Shows if FAA is selected -->
-									<div
-										class="flex flex-col gap-1 FAAInputContainer hidden"
-										id="FAAInputContainer"
-									>
-										<label
-											for="FAAInput"
-											class="font-semibold text-sm cursor-pointer"
-											>FAA Verification</label
-										>
-										<input
-											type="file"
-											id="FAAInput"
-											name="FAAInput"
-											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-										/>
-									</div>
-								</div>
-								<div class="input">
-									<input
-										type="checkbox"
-										name="EASA"
-										id="EASA"
-										class="w-3 h-3 cursor-pointer"
-										value="true"
-									/>
-									<label
-										for="EASA"
-										class="text-sm cursor-pointer"
-										>EASA</label
-									>
-								</div>
-								<div class="input">
-									<input
-										type="checkbox"
-										name="UKCAA"
-										id="UKCAA"
-										class="w-3 h-3 cursor-pointer"
-										value="true"
-									/>
-									<label
-										for="UKCAA"
-										class="text-sm cursor-pointer"
-										>UKCAA</label
-									>
-								</div>
-								<div class="input">
-									<input
-										type="checkbox"
-										name="Other"
-										id="otherLicense"
-										class="w-3 h-3 cursor-pointer"
-										value="true"
-									/>
-									<label
-										for="Other"
-										class="text-sm cursor-pointer"
-										>Other</label
-									>
-									<!-- Shows if Other is selected -->
-									<div
-										class="flex flex-col gap-1hidden"
-										id="otherLicenseInputContainer"
-									>
-										<label
-											for="otherLicense"
-											class="font-semibold text-sm cursor-pointer"
-											>Other</label
-										>
-										<input
-											type="text"
-											id="otherLicenseInput"
-											name="otherLicense"
-											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-										/>
-									</div>
-								</div>
-							</div>
-						</div>
 						<!-- Aircraft types -->
 						<div
 							class="aircraftSelect formInput flex flex-col gap-1"
+							id="aircraftSelect"
 						>
 							<p class="font-semibold text-sm">
-								Select any aircraft you have experience on
+								Select relevant aircrafts
 							</p>
 							<div
 								class="aircraftSelectcontainer mt-2"
@@ -1160,144 +781,31 @@
 								</div>
 							</div>
 						</div>
-						<!-- Experience -->
-						<p class="experience font-semibold text-sm -mb-2">
-							Experience
-						</p>
-						<div
-							class="experienceContainer flex flex-col gap-1 bg-whiteBg p-3 rounded-md"
-							id="experienceContainer"
-						>
-							<div
-								class="formInput flex items-center justify-between gap-2"
+						<!-- Aircraft Tail no -->
+						<div class="formInput flex flex-col gap-1">
+							<label for="tailNum" class="font-semibold text-sm"
+								>Aircraft Registration Number</label
 							>
-								<label for="totalTime" class="text-sm"
-									>Total time (hours):
-								</label>
-								<input
-									type="number"
-									name="totalTime"
-									id="totalTime"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="PIC" class="text-sm"
-									>PIC (hours):
-								</label>
-								<input
-									type="number"
-									name="PIC"
-									id="PIC"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="secondTime" class="text-sm"
-									>Time in Second Command (hours):
-								</label>
-								<input
-									type="number"
-									name="secondTime"
-									id="secondTime"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="singleEngine" class="text-sm"
-									>Single Engine Land:
-								</label>
-								<input
-									type="number"
-									name="singleEngine"
-									id="singleEngine"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="multiEngine" class="text-sm"
-									>Multi Engine Land:
-								</label>
-								<input
-									type="number"
-									name="multiEngine"
-									id="multiEngine"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="jetTime" class="text-sm"
-									>Jet Time (hours):
-								</label>
-								<input
-									type="number"
-									name="jetTime"
-									id="jetTime"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="turbineTime" class="text-sm"
-									>Turbine Time (hours):
-								</label>
-								<input
-									type="number"
-									name="turbineTime"
-									id="turbineTime"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="heliHours" class="text-sm"
-									>Helicopter Time (hours):
-								</label>
-								<input
-									type="number"
-									name="heliHours"
-									id="heliHours"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
-							<div
-								class="formInput flex items-center justify-between gap-2"
-							>
-								<label for="instructorHours" class="text-sm"
-									>Instructor Time (hours):
-								</label>
-								<input
-									type="number"
-									name="instructorHours"
-									id="instructorHours"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
-								/>
-							</div>
+							<input
+								type="number"
+								name="tailNum"
+								id="tailNum"
+								class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+							/>
 						</div>
-						<!-- Job Type -->
+						<!-- Crew Type -->
 						<div
-							class="jobType formInput flex flex-col gap-1"
+							class="formInput flex flex-col gap-1"
 							id="jobTypeContainer"
 						>
-							<p class="font-semibold text-sm">Job type</p>
+							<p class="font-semibold text-sm">Crew type</p>
 							<p
 								class="text-red text-xs italic hidden"
 								id="pAndFMessage"
 							>
 								Please choose Permanent and/or Freelance
 							</p>
+
 							<div class="checkbox flex items-center gap-1">
 								<input
 									type="checkbox"
@@ -1331,55 +839,276 @@
 								>
 							</div>
 						</div>
-						<!-- Visa -->
-						<div
-							class="visa formInput flex flex-col gap-1"
-							id="visaContainer"
-						>
-							<label for="visa" class="font-semibold text-sm"
-								>Enter any valid visas you currently have</label
+						<!-- What's needed? -->
+						<div class="requirements formInput flex flex-col gap-1">
+							<p class="font-semibold text-sm">
+								Select what position(s) your company need
+							</p>
+							<div
+								class="requirements mt-2"
+								id="requirementsContainer"
+							>
+								<div class="input flex items-center gap-1">
+									<input
+										type="checkbox"
+										name="captain"
+										id="captain"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="captain"
+										class="text-sm cursor-pointer"
+										>Captain</label
+									>
+								</div>
+								<!-- Captain requirements -->
+								<div
+									class="captainRequirementDetails flex items-center gap-1 my-2"
+									id="captainRequirementDetails"
+								>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label for="captainNum" class="text-sm"
+											>How many?</label
+										>
+										<input
+											type="text"
+											name="captainNum"
+											id="captainNum"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="captainMinHours"
+											class="text-sm"
+											>Minimum hours</label
+										>
+										<input
+											type="text"
+											name="captainMinHours"
+											id="captainMinHours"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="captainAddInfo"
+											class="text-sm"
+											>Additional information</label
+										>
+										<input
+											type="text"
+											name="captainAddInfo"
+											id="captainAddInfo"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+								</div>
+								<div class="input flex items-center gap-1">
+									<input
+										type="checkbox"
+										name="firstOffice"
+										id="firstOffice"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="firstOffice"
+										class="text-sm cursor-pointer"
+										>First Office</label
+									>
+								</div>
+								<!-- First office requirements -->
+								<div
+									class="firstOfficeRequirementDetails flex items-center gap-1 my-2"
+									id="firstOfficeRequirementDetails"
+								>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="firstOfficeNum"
+											class="text-sm"
+											>How many?</label
+										>
+										<input
+											type="text"
+											name="firstOfficeNum"
+											id="firstOfficeNum"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="firstOfficeMinHours"
+											class="text-sm"
+											>Minimum hours</label
+										>
+										<input
+											type="text"
+											name="firstOfficeMinHours"
+											id="firstOfficeMinHours"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="firstOfficeAddInfo"
+											class="text-sm"
+											>Additional information</label
+										>
+										<input
+											type="text"
+											name="firstOfficeAddInfo"
+											id="firstOfficeAddInfo"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+								</div>
+								<div class="input flex items-center gap-1">
+									<input
+										type="checkbox"
+										name="flightAttendant"
+										id="flightAttendant"
+										class="w-3 h-3 cursor-pointer"
+										value="true"
+									/>
+									<label
+										for="flightAttendant"
+										class="text-sm cursor-pointer"
+										>Flight Attendant</label
+									>
+								</div>
+								<!-- Attendant First office requirements -->
+								<div
+									class="attendantRequirementDetails flex items-center gap-1 my-2"
+									id="attendantRequirementDetails"
+								>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="attendantNum"
+											class="text-sm"
+											>How many?</label
+										>
+										<input
+											type="number"
+											name="attendantNum"
+											id="attendantNum"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="attendantMinHours"
+											class="text-sm"
+											>Minimum hours</label
+										>
+										<input
+											type="number"
+											name="attendantMinHours"
+											id="attendantMinHours"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+									<div
+										class="input flex flex-col justify-center gap-1 w-1/4"
+									>
+										<label
+											for="attendantAddInfo"
+											class="text-sm"
+											>Additional information</label
+										>
+										<input
+											type="text"
+											name="attendantAddInfo"
+											id="attendantAddInfo"
+											class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Type of Operation -->
+						<div class="formInput flex flex-col gap-1" id="opType">
+							<p class="font-semibold text-sm">
+								Type of Operation
+							</p>
+
+							<div class="checkbox flex items-center gap-1">
+								<input
+									type="checkbox"
+									name="ownerFlights"
+									id="ownerFlights"
+									class="w-3 h-3 cursor-pointer"
+									value="true"
+								/>
+								<label
+									for="ownerFlights"
+									class="cursor-pointer text-sm"
+									>Owner Flights (part 91)</label
+								>
+							</div>
+							<div
+								class="checkbox flex items-center gap-1"
+								id="chargerFlights"
+							>
+								<input
+									type="checkbox"
+									name="chargerFlights"
+									id="chargerFlights"
+									class="w-3 h-3 cursor-pointer"
+									value="true"
+								/>
+								<label
+									for="chargerFlights"
+									class="text-sm cursor-pointer"
+									>Charger Flights (part 135)</label
+								>
+							</div>
+							<div
+								class="checkbox flex items-center gap-1"
+								id="scheduledAirline"
+							>
+								<input
+									type="checkbox"
+									name="scheduledAirline"
+									id="scheduledAirline"
+									class="w-3 h-3 cursor-pointer"
+									value="true"
+								/>
+								<label
+									for="scheduledAirline"
+									class="text-sm cursor-pointer"
+									>Scheduled Airline(part 121)</label
+								>
+							</div>
+						</div>
+						<!-- Additional info -->
+						<div class="formInput flex flex-col gap-1">
+							<label for="addInfo" class="font-semibold text-sm"
+								>Additional Information</label
 							>
 							<input
 								type="text"
-								name="visa"
-								id="visa"
+								name="addInfo"
+								id="addInfo"
 								class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus"
 							/>
-						</div>
-						<!-- CV and Photo upload -->
-						<div class="uploads flex -items-center justify-between">
-							<div
-								class="flex flex-col gap-1 w-full"
-								id="cvUploadContainer"
-							>
-								<label
-									for="cvUpload"
-									class="font-semibold text-sm"
-									>Upload CV</label
-								>
-								<input
-									type="file"
-									id="cvUpload"
-									name="cvUpload"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus cursor-pointer"
-								/>
-							</div>
-							<div
-								class="flex flex-col gap-1 w-full"
-								id="photoUploadContainer"
-							>
-								<label
-									for="photoUpload"
-									class="font-semibold text-sm"
-									>Upload a photo of yourself</label
-								>
-								<input
-									type="file"
-									id="photoUpload"
-									name="photoUpload"
-									class="outline-none border border-black_half rounded-md py-1 px-2 outline-none focus:bg-redfocus cursor-pointer"
-								/>
-							</div>
 						</div>
 						<p
 							id="validationMessage"
@@ -1387,7 +1116,6 @@
 						>
 							Please double check all required fields
 						</p>
-
 						<!-- Submit -->
 						<div class="submit-btn">
 							<button

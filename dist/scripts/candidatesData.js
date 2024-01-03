@@ -5,7 +5,6 @@ function renderRecords(containerId, records) {
 	const attendantsContainer = document.getElementById('attendants-container');
 	const pilotsContainer = document.getElementById('pilots-container');
 	const btnGroup = document.getElementById('btnGroup');
-
 	// Show flight attendants
 	attendantBtn.addEventListener('click', (e) => {
 		attendantsContainer.classList.remove('hidden');
@@ -95,11 +94,6 @@ function renderRecords(containerId, records) {
 			vipExperience.innerHTML = `<span class="font-semibold text-lg">VIP Experience:</span> ${record.fields.VIP_Experience} years`;
 			rowFour.appendChild(vipExperience);
 
-			// Get license types
-			const licenseTypes = document.createElement('p');
-			licenseTypes.innerHTML = `<span class="font-semibold text-lg">License Type(s):</span> ${record.fields.License_Type}`;
-			rowFour.appendChild(licenseTypes);
-
 			const rowFive = document.createElement('div');
 			rowFive.classList.add(
 				'rowFive',
@@ -118,7 +112,6 @@ function renderRecords(containerId, records) {
 						)
 						.join('')
 				: '';
-			console.log(aircraftTypes);
 
 			aircraftTypes.innerHTML = `<span class="font-semibold text-lg">Aircraft Type(s):</span> ${aircraftTypesText}`;
 
@@ -128,7 +121,7 @@ function renderRecords(containerId, records) {
 		});
 	});
 
-	// Show flight attendants
+	// Show pilots
 	pilotBtn.addEventListener('click', (e) => {
 		pilotsContainer.classList.remove('hidden');
 		btnGroup.classList.add('hidden');
@@ -217,16 +210,6 @@ function renderRecords(containerId, records) {
 			totalTime.innerHTML = `<span class="font-semibold text-lg">Total time:</span> ${record.fields.Total_Time} hours`;
 			rowFour.appendChild(totalTime);
 
-			// Get Command Time
-			const commandTime = document.createElement('p');
-			totalTime.innerHTML = `<span class="font-semibold text-lg">Command time:</span> ${record.fields.commandTime} hours`;
-			rowFour.appendChild(commandTime);
-
-			// Get license types
-			const licenseTypes = document.createElement('p');
-			licenseTypes.innerHTML = `<span class="font-semibold text-lg">License Type(s):</span> ${record.fields.License_Type}`;
-			rowFour.appendChild(licenseTypes);
-
 			const rowFive = document.createElement('div');
 			rowFive.classList.add(
 				'rowFive',
@@ -255,6 +238,8 @@ function renderRecords(containerId, records) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+	let attendantRecords;
+	let pilotRecords;
 	setTimeout(() => {
 		btnGroup.classList.remove('hidden');
 	}, 3000);
@@ -263,6 +248,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		.then((response) => response.json())
 		.then((data) => {
 			if (data && typeof data === 'object') {
+				attendantRecords = data.attendants || [];
+				pilotRecords = data.pilots || [];
 				renderRecords('pilots-container', data.pilots || []);
 				renderRecords('attendants-container', data.attendants || []);
 			} else {

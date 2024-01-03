@@ -14,11 +14,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use('/dist', express.static(path.join(__dirname, '../dist')));
-app.use('/dist', express.static(path.join(__dirname, '../dist/imgs')));
-app.use('/dist', express.static(path.join(__dirname, '../dist/styles.css')));
-app.use('/dist', express.static(path.join(__dirname, '../dist/scripts')));
-// app.use('/dist', express.static(path.join(__dirname, '../dist/styles.css')));
+app.use('/dist', express.static(path.join(__dirname, './dist')));
+app.use('/dist', express.static(path.join(__dirname, './dist/imgs')));
+app.use('/dist', express.static(path.join(__dirname, './dist/styles.css')));
+app.use('/dist', express.static(path.join(__dirname, './dist/scripts')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,6 +30,7 @@ const opulentBase = new Airtable({ apiKey: `${process.env.TOKEN}` }).base(
 const attendantsTable = opulentBase('Attendant');
 const pilotsTable = opulentBase('Pilot');
 const contactTable = opulentBase('Contact');
+const employerTable = opulentBase('Employer');
 // Cloudinary config
 cloudinary.config({
 	cloud_name: `${process.env.CLOUDINARY_CLOUD_NAME}`,
@@ -39,7 +39,7 @@ cloudinary.config({
 });
 // Main route
 app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '../index.html'));
+	res.sendFile(path.join(__dirname, './index.html'));
 });
 
 // @route     : Attendant table
@@ -152,8 +152,8 @@ app.post('/pilot', async (req, res) => {
 					Age: req.body.age,
 					Gender: req.body.gender,
 					Total_Time: req.body.totalTime,
-					Command_Time: req.body.commandTime,
-					Time_in_Second_Command: req.body.secondTime,
+					PIC_Time: req.body.PIC,
+					SIC_Time: req.body.SIC,
 					Single_Engine_Land: req.body.singleEngine,
 					Multi_Engine_Land: req.body.multiEngine,
 					Jet_Time: req.body.jetTime,
@@ -236,12 +236,71 @@ app.post('/contact', async (req, res) => {
 			};
 
 			await contactTable.create([airtableRecord]);
-			console.log('It worked');
-			console.log(req.body);
-			res.send('Record created successfully');
+			res.send('Thank you for your submisison. We will be in touch soon');
 		} catch (error) {
 			console.error(error);
 			res.status(500).send('Error creating record');
+		}
+	});
+});
+
+// @route     : Employer table
+// @origin    : /employer form
+app.post('/employer', async (req, res) => {
+	upload(req, res, async (err) => {
+		try {
+			if (err) {
+				console.error(err);
+				return res.status(500).send('Error uploading file');
+			}
+
+			const airtableRecord = {
+				fields: {
+					'First Name': req.body.fname,
+					'Last Name': req.body.lname,
+					'Email address': req.body.email,
+					'Phone number': req.body.phone,
+					Country: req.body.country,
+					Censna: req.body.Censna,
+					Beechcraft: req.body.Beechcraft,
+					ATR: req.body.ATR,
+					Embrear: req.body.Embrear,
+					Legacy: req.body.Legacy,
+					Bombardier_Challenger: req.body.BombardierChallenger,
+					Gulfstream: req.body.Gulfstream,
+					Dassault: req.body.Dassault,
+					Dassault_Felcon: req.body.DassaultFelcon,
+					Aircraft_Reg_Num: req.body.tailNum,
+					Permanent: req.body.permanent,
+					Freelance: req.body.freelance,
+					Captain: req.body.captain,
+					Captain_Num: req.body.captainNum,
+					Captain_Min_Hours: req.body.captainMinHours,
+					Captain_Add_Info: req.body.captainAddInfo,
+					First_Office: req.body.firstOffice,
+					First_Office_Num: req.body.firstOfficeNum,
+					First_Office_Min_Hours: req.body.firstOfficeMinHours,
+					First_Office_Add_Info: req.body.firstOfficeAddInfo,
+					Flight_Attendant: req.body.flightAttendant,
+					Flight_Attendant_Num: req.body.flightAttendantNum,
+					Flight_Attendant_Min_Hours:
+						req.body.flightAttendantMinHours,
+					Flight_Attendant_Add_Info: req.body.flightAttendantAddInfo,
+					Owner_Flights: req.body.ownerFlights,
+					Charger_Flights: req.body.chargerFlights,
+					Scheduled_Airline: req.body.scheduledAirline,
+					Additional_Info: req.body.addInfo,
+				},
+			};
+
+			await employerTable.create([airtableRecord]);
+			console.log('It worked');
+			res.send(
+				'Thank you for your application. We will be in touch soon'
+			);
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('There was an unexpected error');
 		}
 	});
 });
@@ -266,15 +325,14 @@ app.get('/operatorData', async (req, res) => {
 	try {
 		const attendantRecords = await fetchRecords(attendantsTable);
 		const pilotRecords = await fetchRecords(pilotsTable);
-		// const contactRecords = await fetchRecords(contactTable);
-		console.log(process.env.TOKEN);
 
 		const allRecords = {
 			attendants: attendantRecords,
 			pilots: pilotRecords,
 		};
-		res.sendFile(path.join(__dirname, '../dist/operator.html')); // Sending the file directly
-		res.end(JSON.stringify(allRecords)); // Sending the data separately (optional)
+		res.sendFile(path.join(__dirname, '../dist/operator.html'));
+		res.end(JSON.stringify(allRecords));
+		console.log(pilotRecords);
 	} catch (error) {
 		console.error(error);
 		res.status(500).send('Error fetching records');
